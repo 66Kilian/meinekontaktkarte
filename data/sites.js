@@ -1,10 +1,9 @@
 // Automatisch aus data/sites.json erzeugt (Admin) – nicht von Hand bearbeiten.
 export default {
-  "rev": "ffzt8q2t",
-  "updatedAt": "2026-10-03T13:51:21.140Z",
+  "rev": "zz1sxs1u",
+  "updatedAt": "2026-10-06T20:44:26.037Z",
   "groups": [
     "Hauptseite",
-    "Kunden",
     "Demos",
     "Fertige Seiten"
   ],
@@ -27,7 +26,7 @@ export default {
     {
       "id": "caribik",
       "name": "Erlebnissauna Caribik",
-      "group": "Kunden",
+      "group": "Demos",
       "folder": "Munkák/Caribik Sauna Club",
       "slug": "caribik",
       "subdomain": "",
@@ -44,7 +43,7 @@ export default {
     {
       "id": "venus",
       "name": "erotik-homepage.com (Venus)",
-      "group": "Kunden",
+      "group": "Demos",
       "folder": "Munkák/Venus Nfc",
       "slug": "venus",
       "subdomain": "",
