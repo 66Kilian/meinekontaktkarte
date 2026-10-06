@@ -1,1221 +1,173 @@
 <!doctype html>
-<html lang="de">
-<head>
+<html lang="de"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Erlebnissauna Caribik · Swingerclub & Sauna in Seisenegg</title>
-<meta name="description" content="Erlebnissauna Caribik – Europas größter und phantasievollster Swingerclub: 4.000 m² auf zwei Etagen, 3 Bars, 4 Saunen, Themenzimmer und Garten. Seisenegg 14, 3322 Seisenegg (NÖ). Speisen & Getränke inklusive.">
-<meta name="theme-color" content="#05080c">
+<title>Erlebnissauna Caribik · Digitale Visitenkarte</title>
+<meta name="description" content="Erlebnissauna Caribik – Swingerclub &amp; Erlebnissauna in Seisenegg, Niederösterreich. Kontakt speichern, per E-Mail kontaktieren oder die Website besuchen.">
+<meta name="theme-color" content="#05090c">
+<meta name="robots" content="index,follow">
 <link rel="icon" href="img/apple-touch-icon.jpg">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.jpg">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Erlebnissauna Caribik · Alles kann, nichts muss.">
-<meta property="og:description" content="Europas größter und phantasievollster Swingerclub – 4.000 m², 3 Bars, 4 Saunen. Seisenegg, Niederösterreich.">
-<meta property="og:image" content="img/barbereich.jpg">
+<meta property="og:title" content="Erlebnissauna Caribik">
+<meta property="og:description" content="Swingerclub &amp; Erlebnissauna in Seisenegg, Niederösterreich">
+<meta property="og:image" content="img/logo.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NightClub","name":"Erlebnissauna Caribik","url":"https://www.caribik.at","image":"img/barbereich.jpg","logo":"img/logo.png",
-"telephone":"+43 664 2985551","email":"office@caribik.at","priceRange":"€€",
-"address":{"@type":"PostalAddress","streetAddress":"Seisenegg 14","postalCode":"3322","addressLocality":"Seisenegg","addressRegion":"Niederösterreich","addressCountry":"AT"},
-"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"19:00","closes":"01:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"20:00","closes":"03:00"}],
-"sameAs":["https://www.facebook.com/share/1PNRjtDsCB/","https://www.instagram.com/erlebnissaunacaribik"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Erlebnissauna Caribik","url":"https://www.caribik.at","email":"office@caribik.at","image":"img/logo.png",
+"address":{"@type":"PostalAddress","streetAddress":"Seisenegg 14","postalCode":"3322","addressLocality":"Seisenegg","addressRegion":"Niederösterreich","addressCountry":"AT"}}
 </script>
-
-<!-- ===== Loader: kritisches CSS + Logik, bevor irgendetwas anderes lädt ===== -->
-<link rel="preload" as="image" href="img/logo-sm.png">
-<style>
-  html.ld-gone .ld{display:none;}
-  .ld{position:fixed;inset:0;z-index:9999;overflow:hidden;background:var(--t-shade,#05080c);transition:opacity .55s ease,visibility .55s;}
-  html.ld-idle .ld{opacity:0;visibility:hidden;pointer-events:none;}
-  html.ld-out .ld{opacity:0;visibility:hidden;pointer-events:none;}
-  /* warmes Licht, das durch die Palmen fällt */
-  .ld-glow{position:absolute;inset:-20%;
-    background:radial-gradient(closest-side at 50% 62%,var(--t-gold,#ffb45a) 0%,var(--t-accent2,#ff7a24) 14%,var(--t-g2,#c8322a) 30%,var(--t-g3,#4a0f14) 52%,var(--t-g4,#12070a) 72%,var(--t-shade,#05080c) 100%);
-    opacity:.0;transform:scale(.7);}
-  .ld-cam{position:absolute;inset:0;perspective:700px;perspective-origin:50% 50%;overflow:hidden;}
-  .ld-world{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;}
-  .ld-f{position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0;transform-style:preserve-3d;}
-  .ld-f svg{position:absolute;left:0;display:block;overflow:visible;transform-origin:0 50%;}
-  .ld-f.near svg{filter:blur(2.5px);}
-  .ld-logo{position:absolute;left:-280px;top:-166px;width:560px;max-width:none;height:auto;transform:translateZ(-1800px);
-    filter:drop-shadow(0 0 1.5px #fff4e4) drop-shadow(0 0 1.5px #fff4e4) drop-shadow(0 0 30px rgba(20,4,6,.9));}
-  .ld-fly{position:absolute;left:0;top:0;width:6px;height:6px;border-radius:50%;background:var(--t-gold2,#ffd48a);
-    box-shadow:0 0 12px 3px color-mix(in srgb,var(--t-gold,rgb(255,170,70)) 80%,transparent);opacity:0;}
-  .ld-info{position:absolute;left:0;right:0;bottom:calc(56px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;gap:14px;
-    opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s;padding:0 24px;}
-  .ld-fact{font:600 15px/1.4 system-ui,-apple-system,sans-serif;color:#f6ecdf;min-height:1.4em;text-align:center;transition:opacity .35s,transform .35s;}
-  .ld-fact.swap{opacity:0;transform:translateY(6px);}
-  .ld-bar{width:min(220px,60vw);height:2px;background:rgba(255,255,255,.12);overflow:hidden;}
-  .ld-bar span{display:block;height:100%;width:0;background:var(--t-gold,#ffb45a);}
-
-  /* Modus 1 – Intro beim allerersten Besuch: Flug durch die Palmen */
-  html.ld-intro .ld-glow{animation:ldGlow 1s cubic-bezier(.3,.6,.2,1) forwards;}
-  html.ld-intro .ld-world{animation:ldFly 1.05s cubic-bezier(.55,.05,.35,1) forwards;}
-  html.ld-intro .ld-logo{animation:ldFocus 1.05s cubic-bezier(.55,.05,.35,1) forwards;}
-  @keyframes ldGlow{to{opacity:1;transform:scale(1);}}
-  @keyframes ldFly{from{transform:translateZ(250px) rotateZ(-4deg);}to{transform:translateZ(900px) rotateZ(0);}}
-  @keyframes ldFocus{0%{filter:blur(14px);opacity:0;}35%{opacity:1;}
-                     100%{filter:blur(0) drop-shadow(0 0 1.5px #fff4e4) drop-shadow(0 0 1.5px #fff4e4) drop-shadow(0 0 30px rgba(20,4,6,.9));opacity:1;}}
-
-  /* Modus 2 – schlechtes Netz: ruhiges Schweben zwischen Palmen, Glühwürmchen */
-  html.ld-long .ld-glow{opacity:1;transform:scale(1);animation:ldBreath 3.4s ease-in-out infinite;}
-  html.ld-long .ld-world{animation:ldDrift 7s ease-in-out infinite alternate-reverse;}
-  html.ld-long .ld-f svg{animation:ldSway var(--sw,5s) ease-in-out infinite alternate;}
-  html.ld-long .ld-fly{animation:ldRise var(--d,6s) linear infinite;animation-delay:var(--dl,0s);}
-  html.ld-long .ld-info{opacity:1;transform:none;}
-  html.ld-long .ld-bar span{animation:ldProg 14s cubic-bezier(.1,.7,.2,1) forwards;}
-  html.ld-long.ld-out .ld-bar span{animation:none;width:100%;transition:width .25s;}
-  @keyframes ldBreath{0%,100%{opacity:.85;}50%{opacity:1;}}
-  @keyframes ldDrift{from{transform:translateZ(640px) rotateY(-5deg);}to{transform:translateZ(900px) rotateY(4deg);}}
-  @keyframes ldSway{from{transform:rotate(-2.5deg);}to{transform:rotate(3deg);}}
-  @keyframes ldRise{0%{transform:translate3d(var(--x),60vh,var(--z));opacity:0;}15%{opacity:1;}85%{opacity:.9;}100%{transform:translate3d(calc(var(--x) + 40px),-60vh,var(--z));opacity:0;}}
-  @keyframes ldProg{0%{width:4%;}100%{width:92%;}}
-  @media (prefers-reduced-motion:reduce){
-    .ld *{animation-duration:.01ms!important;animation-iteration-count:1!important;}
-  }
-</style>
-<script>
-(function(){
-  var d = document.documentElement; d.classList.add("js");
-  var seen = false; try{ seen = localStorage.getItem("cbk_intro2") === "1"; }catch(e){}
-  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var loaded = false, introDone = seen, shown = !seen, finished = false;
-  d.classList.add(seen ? "ld-idle" : "ld-intro");
-  function finish(){
-    if(finished) return; finished = true; d.classList.add("ready");
-    if(!shown){ d.classList.add("ld-gone"); return; }
-    d.classList.add("ld-out");
-    setTimeout(function(){ d.classList.add("ld-gone"); }, 700);
-  }
-  function check(){ if(loaded && introDone) finish(); }
-  function goLong(){ d.classList.remove("ld-intro","ld-idle"); d.classList.add("ld-long"); startFacts(); }
-  if(!seen){
-    setTimeout(function(){
-      introDone = true;
-      try{ localStorage.setItem("cbk_intro2","1"); }catch(e){}
-      if(!loaded) goLong();
-      check();
-    }, reduce ? 300 : 900);
-  } else {
-    // Wiederkehrende Besucher: kein Intro – nur wenn es wirklich dauert
-    setTimeout(function(){ if(!loaded){ shown = true; goLong(); } }, 700);
-  }
-  window.addEventListener("load", function(){ loaded = true; check(); });
-  setTimeout(function(){ loaded = true; introDone = true; check(); }, 14000);
-
-  var facts = ["Die Caribik öffnet gleich ihre Türen …","4.000 m² auf zwei Etagen","3 Bars · 4 Saunen","Alles kann, nichts muss."];
-  var factTimer = null;
-  function startFacts(){
-    if(factTimer) return;
-    var i = 0;
-    function put(){
-      var el = document.getElementById("ldFact"); if(!el) return;
-      el.classList.add("swap");
-      setTimeout(function(){ el.textContent = facts[i % facts.length]; el.classList.remove("swap"); i++; }, 300);
-    }
-    put(); factTimer = setInterval(function(){ if(finished){ clearInterval(factTimer); return; } put(); }, 2300);
-  }
-})();
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Kaushan+Script&family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="preload" as="image" href="img/barbereich-s.jpg" imagesrcset="img/barbereich-s.jpg 720w, img/barbereich.jpg 1400w" imagesizes="(min-width:980px) 520px, 80vw">
+<script>document.documentElement.classList.add("js");</script>
 <style>
   :root{
-    --bg:#05080c;
-    --bg-2:#091017;
-    --surface:#0e151c;
-    --surface-2:#141d26;
-    --surface-3:#1c2833;
-    --line:rgba(255,255,255,.08);
-    --line-strong:rgba(255,255,255,.16);
-    --text:#fbf6ef;
-    --text-dim:#aab2b8;
-    --text-faint:#78828a;
-    --red:#dc1430;
-    --orange:#ff6a1a;
-    --gold:#ffc23d;
-    --gold-2:#ffe29a;
-    --lagoon:#2ad6c5;
-    --red-soft:rgba(238,26,51,.14);
-    --orange-soft:rgba(255,106,26,.14);
-    --gold-soft:rgba(255,194,61,.13);
-    --lagoon-soft:rgba(42,214,197,.13);
-    --sunset:linear-gradient(95deg,#ff2a3d 0%,#ff7a1a 50%,#ffc23d 100%);
-    color-scheme:dark;
+    /* Namen wie in lib/themes.js – ein gewähltes Kunden-Design überschreibt sie */
+    --bg:#05090c;--bg-2:#0c1a20;--card:#0e1d23;--line:rgba(244,238,228,.16);
+    --text:#f4eee4;--text-dim:#a9b6b5;--red:#ff6a1a;--orange:#ff6a1a;--gold:#f6b54a;--lagoon:#2ad6c5;
+    --ink:#f4eee4;--ink-dim:#9fb0ae;--on-accent:#1a0d05;
+    --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;background:var(--bg);color:var(--text);
-    font-family:'Manrope',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:998;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  @media(max-width:759px){ body{padding-bottom:96px;} }
-  img{max-width:100%;height:auto;display:block;}
-  a{color:inherit;}
-  button{font:inherit;color:inherit;}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px;}
-  [hidden]{display:none!important;}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;background:var(--bg)}
+  body{margin:0;min-height:100svh;background:var(--bg);color:var(--text);font:400 16px/1.5 var(--font);-webkit-font-smoothing:antialiased;
+    display:flex;flex-direction:column;align-items:center;overflow-x:hidden}
+  ::selection{background:var(--orange);color:var(--on-accent)}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
 
-  .wrap{max-width:1180px;margin:0 auto;padding-inline:20px;}
-  h1,h2,h3{margin:0;text-wrap:balance;}
-  h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:800;letter-spacing:-.02em;font-optical-sizing:auto;}
-  .num{font-variant-numeric:tabular-nums;}
-  .grad{background:var(--sunset);-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .script{font-family:'Kaushan Script',cursive;color:var(--gold);font-weight:400;letter-spacing:0;}
-  .eyebrow{
-    font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--orange);margin:0 0 14px;display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--sunset);flex-shrink:0;}
-  [dir="rtl"] .eyebrow{letter-spacing:0;}
+  /* Nacht über der Lagune: ein einziger warmer Horizont, kein Dekor */
+  .sky{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      linear-gradient(180deg,var(--bg) 0%,var(--bg) 46%,color-mix(in srgb,var(--lagoon) 9%,var(--bg)) 78%,color-mix(in srgb,var(--orange) 16%,var(--bg)) 100%)}
 
-  /* scroll progress */
-  .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none;}
-  .progress span{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));background:var(--sunset);}
-  [dir="rtl"] .progress span{transform-origin:100% 50%;}
+  header.top{width:100%;max-width:440px;display:flex;justify-content:flex-end;padding:calc(12px + env(safe-area-inset-top,0px)) 20px 0}
+  .langbox{position:relative}
+  #langBtn{display:flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text-dim);font:600 13px var(--font);letter-spacing:.06em;cursor:pointer}
+  #langPanel{position:absolute;right:0;top:42px;z-index:5;min-width:170px;padding:6px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);box-shadow:0 18px 36px -12px rgba(0,0,0,.7);display:none}
+  #langPanel.open{display:block}
+  #langPanel button{display:flex;gap:10px;width:100%;padding:10px;border:0;border-radius:8px;background:none;color:var(--text);font:inherit;font-size:15px;cursor:pointer;text-align:left}
+  #langPanel button:hover,#langPanel button[aria-current=true]{background:color-mix(in srgb,var(--text) 9%,transparent)}
+  #langPanel .code{margin-left:auto;color:var(--text-dim);font-size:12px}
 
-  /* scroll reveal */
-  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s);}
-  html.js .reveal.in{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
-  }
+  main{width:100%;max-width:440px;flex:1;display:flex;flex-direction:column;justify-content:center;padding:10px 20px 20px}
+  section.vcard{display:flex;flex-direction:column;gap:20px}
 
-  /* lazy image (scroll-to-load) */
-  .lz{background:linear-gradient(110deg,var(--surface) 30%,var(--surface-2) 50%,var(--surface) 70%) 0 0/300% 100%;animation:shim 1.6s linear infinite;overflow:hidden;}
-  .lz.done{animation:none;background:var(--surface);}
-  .lz img{opacity:0;transform:scale(1.06);filter:blur(10px);transition:opacity .8s ease,transform 1.2s cubic-bezier(.2,.7,.2,1),filter .8s ease;}
-  .lz.done img{opacity:1;transform:none;filter:none;}
-  @keyframes shim{to{background-position:-300% 0;}}
+  /* Die Karte selbst: Format einer gedruckten Visitenkarte, hochkant */
+  .card{position:relative;overflow:hidden;color:var(--ink);background:var(--card);border-radius:20px;padding:26px 24px 22px;
+    border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);
+    box-shadow:0 14px 28px -18px rgba(0,0,0,.9);
+    transform-origin:50% 100%}
+  .card .logo{width:min(70%,260px);margin:2px auto 0}
+  .card .rule{height:1px;margin:18px 0 16px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ink) 22%,transparent),transparent)}
+  .card h1{margin:0;text-align:center;font-size:clamp(22px,6.4vw,27px);line-height:1.15;font-weight:700;letter-spacing:-.01em}
+  .card .what{margin:6px 0 0;text-align:center;font-size:15px;color:var(--ink-dim)}
+  .card dl{margin:18px 0 0;display:grid;gap:10px}
+  .card .r{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+  .card .r svg{width:20px;height:20px;margin-top:1px;color:color-mix(in srgb,var(--orange) 85%,var(--ink))}
+  .card dt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .card dd{margin:0;font-size:15.5px;line-height:1.45;overflow-wrap:anywhere}
+  .card dd a{text-decoration:none}
+  .card dd a:hover{text-decoration:underline}
 
-  /* ---------- header ---------- */
-  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px;}
-  .brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
-  .brand img{height:44px;width:auto;filter:drop-shadow(0 1px 8px rgba(0,0,0,.6));}
-  .nav-links{display:none;gap:26px;font-size:14px;font-weight:700;}
-  .nav-links a{text-decoration:none;color:var(--text-dim);transition:color .2s;}
-  .nav-links a:hover{color:var(--text);}
-  @media(min-width:1060px){.nav-links{display:flex;}}
-  .nav-right{display:flex;align-items:center;gap:10px;}
-  .nav-phone{
-    display:none;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--text);text-decoration:none;
-    border:1px solid var(--line-strong);border-radius:100px;padding:9px 14px;white-space:nowrap;
-  }
-  @media(min-width:760px){.nav-phone{display:inline-flex;}}
-  .dot-live{width:7px;height:7px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 3px rgba(61,220,132,.2);flex-shrink:0;}
-  .dot-live.off{background:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--t-gold,rgb(255,194,61)) 20%,transparent);}
+  .actions{display:grid;gap:10px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;border-radius:14px;font:650 16px/1 var(--font);letter-spacing:.01em;text-decoration:none;border:1.5px solid transparent;transition:transform .15s,background .2s,border-color .2s}
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-main{background:var(--orange);color:var(--on-accent)}
+  .btn-main:hover{background:color-mix(in srgb,var(--orange) 88%,#fff)}
+  .btn-line{border-color:var(--line);color:var(--text)}
+  .btn-line:hover{border-color:color-mix(in srgb,var(--text) 45%,transparent)}
+  .btn-site{color:var(--lagoon);min-height:50px}
+  .btn-site:hover{text-decoration:underline;text-underline-offset:.2em}
 
-  .langbox{position:relative;}
-  #langBtn{
-    display:flex;align-items:center;gap:7px;cursor:pointer;
-    background:var(--surface);border:1px solid var(--line-strong);border-radius:100px;
-    padding:8px 12px;font-size:12.5px;font-weight:800;
-  }
-  #langBtn .car{color:var(--text-dim);font-size:10px;transition:transform .2s;}
-  #langBtn[aria-expanded="true"] .car{transform:rotate(180deg);}
-  #langPanel{
-    position:absolute;top:calc(100% + 10px);right:0;z-index:50;display:none;
-    background:var(--surface-2);border:1px solid var(--line-strong);border-radius:16px;
-    padding:6px;width:228px;max-height:min(380px,70vh);overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.6);
-  }
-  [dir="rtl"] #langPanel{right:auto;left:0;}
-  #langPanel.open{display:block;}
-  #langPanel button{
-    width:100%;display:flex;align-items:center;gap:10px;background:transparent;border:0;
-    padding:9px 10px;border-radius:10px;cursor:pointer;font-size:14px;text-align:start;
-  }
-  #langPanel button:hover,#langPanel button:focus-visible{background:var(--orange-soft);}
-  #langPanel button[aria-current="true"]{color:var(--gold);}
-  #langPanel .code{margin-inline-start:auto;font-size:10.5px;font-weight:800;color:var(--text-faint);}
+  footer{width:100%;max-width:520px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;padding:0 22px calc(18px + env(safe-area-inset-bottom,0px));font-size:13px;color:var(--text-dim)}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--text)}
 
-  /* ---------- buttons ---------- */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    padding:15px 24px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;
-    border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,border-color .2s,background .2s;
-    white-space:nowrap;
-  }
-  .btn svg{flex-shrink:0;}
-  .btn:active{transform:scale(.97);}
-  .btn-primary{background:var(--red);color:var(--t-on-accent,#fff);}
-  .btn-primary:hover{background:var(--t-hover,#c90f24);}
-  .btn-ghost{background:var(--surface);border-color:var(--line-strong);}
-  .btn-ghost:hover{border-color:var(--orange);}
-  .btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:var(--t-btn-ink,#1b1204);box-shadow:0 14px 34px -14px color-mix(in srgb,var(--t-gold,rgb(255,194,61)) 70%,transparent);}
-  .btn-sm{padding:10px 16px;font-size:13.5px;}
-  @media (hover:hover) and (pointer:fine){ .save-contact{display:none!important;} }
-
-  .ico-sq{width:40px;height:40px;border-radius:11px;background:var(--orange-soft);color:var(--orange);display:grid;place-items:center;flex-shrink:0;}
-  .socials{display:flex;gap:10px;flex-wrap:wrap;}
-
-  /* ---------- sections ---------- */
-  section.block{padding-block:72px;position:relative;scroll-margin-top:64px;}
-  @media(min-width:980px){section.block{padding-block:108px;}}
-  .section-head{max-width:720px;margin-bottom:40px;}
-  .section-head h2{font-size:clamp(30px,4.6vw,54px);line-height:1.04;}
-  .section-head p{color:var(--text-dim);font-size:clamp(15.5px,1.5vw,17.5px);margin:14px 0 0;line-height:1.6;}
-  .head-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:40px;}
-  .head-row .section-head{margin-bottom:0;}
-
-  /* rooms gallery */
-  .rooms{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-inline:-20px;padding-inline:20px;scrollbar-width:none;}
-  .rooms::-webkit-scrollbar{display:none;}
-  @media(min-width:760px){.rooms{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0;}}
-  @media(min-width:1060px){.rooms{grid-template-columns:repeat(4,1fr);} .room.wide{grid-column:span 2;}}
-  .room{position:relative;border-radius:22px;border:1px solid var(--line);scroll-snap-align:start;cursor:zoom-in;padding:0;display:block;width:100%;text-align:start;aspect-ratio:4/3.1;}
-  .room.wide{aspect-ratio:auto;}
-  .room img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .room::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,transparent 45%,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 88%,transparent));pointer-events:none;}
-  .room .cap{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px;}
-  .room .cap b{font-size:17px;font-weight:800;}
-  .room .tag{font-size:11px;font-weight:800;padding:4px 9px;border-radius:100px;background:var(--lagoon-soft);color:var(--lagoon);border:1px solid color-mix(in srgb,var(--t-gold,rgb(42,214,197)) 30%,transparent);white-space:nowrap;}
-  .room:hover img{transform:scale(1.04);}
-  .room img{transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .8s ease,filter .8s ease!important;}
-  .swipe-hint{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text-faint);margin-top:12px;}
-  @media(min-width:760px){.swipe-hint{display:none;}}
-
-  /* split feature (wellness / food) */
-  .split{display:grid;gap:36px;align-items:center;}
-  @media(min-width:980px){.split{grid-template-columns:1fr 1fr;gap:64px;} .split.rev > :first-child{order:2;}}
-  .photo-3d{perspective:1200px;}
-  .photo-3d .frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line-strong);aspect-ratio:3/2.2;}
-  @media(max-width:759px){.photo-3d{margin-inline:-20px;} .photo-3d .frame{border-radius:0;border-inline:0;}}
-  .photo-3d .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .photo-3d .float{position:absolute;right:-10px;bottom:-18px;width:42%;border-radius:20px;overflow:hidden;border:1px solid var(--line-strong);aspect-ratio:3/2;box-shadow:0 30px 60px -20px rgba(0,0,0,.9);transform:translateZ(60px) rotate(4deg);}
-  .photo-3d .float img{width:100%;height:100%;object-fit:cover;}
-  .photo-wrap{position:relative;}
-  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
-  .pill{display:inline-flex;align-items:center;gap:9px;padding:11px 15px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:700;}
-  .pill svg{color:var(--orange);flex-shrink:0;}
-  .pill.l svg{color:var(--lagoon);}
-  .menu{display:grid;gap:10px;margin-top:24px;}
-  .menu div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:var(--surface);border:1px solid var(--line);}
-  .menu b{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:2px;}
-  .menu span{font-size:14.5px;color:var(--text-dim);}
-
-  /* stay */
-  .stay-grid{display:grid;gap:20px;}
-  @media(min-width:860px){.stay-grid{grid-template-columns:1fr 1fr;}}
-  .stay{border-radius:28px;overflow:hidden;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;}
-  .stay .media{aspect-ratio:16/10;position:relative;}
-  .stay .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .stay .media .pp{position:absolute;right:14px;top:14px;z-index:1;padding:9px 14px;border-radius:100px;background:color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 80%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line-strong);font-weight:800;}
-  [dir="rtl"] .stay .media .pp{right:auto;left:14px;}
-  .stay .media .pp b{font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--gold);}
-  .stay .media .pp small{font-size:12px;color:var(--text-dim);font-weight:700;}
-  .stay .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;}
-  .stay h3{font-size:21px;font-weight:800;}
-  .stay p{margin:0;color:var(--text-dim);font-size:14.5px;}
-  .stay-info{display:grid;gap:12px;margin-top:20px;}
-  @media(min-width:860px){.stay-info{grid-template-columns:repeat(3,1fr);}}
-  .si{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--text-dim);}
-  .si b{color:var(--text);display:block;font-size:14.5px;}
-  .si .ico-sq{width:38px;height:38px;}
-  .si a{color:var(--gold);font-weight:800;text-decoration:none;}
-  .stay-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
-
-  /* rules + dresscode */
-  .rules{display:grid;grid-template-columns:1fr;gap:10px;counter-reset:r;}
-  @media(min-width:640px){.rules{grid-template-columns:1fr 1fr;}}
-  @media(min-width:1060px){.rules{grid-template-columns:repeat(4,1fr);}}
-  .rule{counter-increment:r;padding:18px;border-radius:18px;background:var(--surface);border:1px solid var(--line);display:flex;gap:14px;align-items:flex-start;font-weight:700;font-size:14.5px;line-height:1.4;}
-  .rule::before{content:counter(r,decimal-leading-zero);font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:22px;line-height:1;background:var(--sunset);-webkit-background-clip:text;background-clip:text;color:transparent;flex-shrink:0;}
-  .rule.hl{border-color:color-mix(in srgb,var(--t-accent2,rgb(255,106,26)) 45%,transparent);background:linear-gradient(150deg,color-mix(in srgb,var(--t-accent2,rgb(255,106,26)) 12%,transparent),transparent 60%),var(--surface);}
-  .dress{display:grid;gap:14px;margin-top:22px;}
-  @media(min-width:860px){.dress{grid-template-columns:repeat(3,1fr);}}
-  .dress .card h3{font-size:17px;margin-bottom:10px;}
-  .dress ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
-  .dress li{display:flex;gap:10px;font-size:14.5px;color:var(--text-dim);line-height:1.45;}
-  .dress li svg{flex-shrink:0;margin-top:3px;color:var(--lagoon);}
-  .dress .no li svg{color:var(--red);}
-  .dress-note{margin:16px 0 0;font-size:14px;color:var(--text-dim);display:flex;gap:10px;}
-  .dress-note svg{color:var(--gold);flex-shrink:0;margin-top:2px;}
-
-  /* faq */
-  .faq{display:grid;gap:10px;max-width:860px;}
-  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .2s;}
-  .faq details[open]{border-color:var(--line-strong);}
-  .faq summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:800;font-size:15.5px;}
-  .faq summary::-webkit-details-marker{display:none;}
-  .faq summary .pm{width:28px;height:28px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;flex-shrink:0;transition:transform .3s,background .2s;}
-  .faq details[open] .pm{transform:rotate(45deg);background:var(--orange-soft);border-color:var(--orange);}
-  .faq .ans{padding:0 20px 18px;color:var(--text-dim);font-size:14.5px;line-height:1.6;}
-  .faq .ans p{margin:0 0 14px;}
-  .yt{display:grid;gap:8px;}
-  .yt-btn{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:12px;overflow:hidden;cursor:pointer;background:var(--bg-2);}
-  .yt-btn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s;}
-  .yt-btn:hover img{opacity:1;}
-  .yt-play{position:absolute;left:50%;top:50%;width:60px;height:42px;margin:-21px 0 0 -30px;border-radius:12px;background:var(--red);color:var(--t-on-accent,#fff);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.5);}
-  .yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;display:block;}
-  .yt-cap{font-size:12.5px;color:var(--text-faint);}
-
-
-  /* extras */
-  .extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  @media(min-width:980px){.extras{grid-template-columns:repeat(4,1fr);gap:16px;}}
-  .ex{display:flex;flex-direction:column;gap:10px;padding:20px 18px;border-radius:20px;background:var(--surface);border:1px solid var(--line);text-decoration:none;transition:border-color .25s,transform .25s;}
-  .ex:hover{border-color:var(--orange);transform:translateY(-3px);}
-  .ex h3{font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:8px;}
-  .ex p{margin:0;font-size:13.5px;color:var(--text-dim);}
-  .ex .ico-sq{width:44px;height:44px;border-radius:13px;}
-  .ex.g .ico-sq{background:var(--gold-soft);color:var(--gold);}
-  .ex.l .ico-sq{background:var(--lagoon-soft);color:var(--lagoon);}
-
-  /* contact */
-  .ct-card{
-    border-radius:32px;padding:clamp(22px,4vw,52px);border:1px solid var(--line-strong);position:relative;overflow:hidden;
-    background:radial-gradient(80% 100% at 0% 0%,color-mix(in srgb,var(--t-accent,rgb(238,26,51)) 18%,transparent),transparent 55%),radial-gradient(60% 80% at 100% 100%,color-mix(in srgb,var(--t-accent2,rgb(255,106,26)) 14%,transparent),transparent 60%),var(--surface);
-  }
-  .ct-grid{display:grid;gap:32px;}
-  @media(min-width:980px){.ct-grid{grid-template-columns:.9fr 1.1fr;align-items:start;gap:56px;}}
-  .ct-card .section-head{margin-bottom:24px;}
-  .rows{display:flex;flex-direction:column;gap:10px;}
-  .row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-radius:18px;background:color-mix(in srgb,var(--t-bg,rgb(5,8,12)) 55%,transparent);border:1px solid var(--line);}
-  .row .l{display:flex;align-items:center;gap:14px;min-width:0;}
-  .row .label{font-size:11px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1px;}
-  .row .value{font-size:clamp(15px,2vw,18px);font-weight:800;overflow-wrap:anywhere;}
-  .row .value a{text-decoration:none;}
-  .row[role="button"],a.row{cursor:pointer;transition:border-color .2s;text-decoration:none;}
-  .row[role="button"]:hover,a.row:hover{border-color:var(--orange);}
-  .row.save{background:linear-gradient(120deg,color-mix(in srgb,var(--t-accent2,rgb(255,106,26)) 18%,transparent),color-mix(in srgb,var(--t-accent,rgb(238,26,51)) 10%,transparent));border-color:color-mix(in srgb,var(--t-accent2,rgb(255,106,26)) 45%,transparent);}
-  .row .go{color:var(--text-dim);flex-shrink:0;}
-  .copy-btn{background:transparent;border:1px solid var(--line-strong);border-radius:100px;padding:8px 14px;font-size:12.5px;font-weight:800;cursor:pointer;flex-shrink:0;}
-  .copy-btn:active{background:var(--orange-soft);border-color:var(--orange);}
-  @media(max-width:440px){ .row .ico-sq{width:36px;height:36px;} .row .value{font-size:15px;} }
-  .ct-card .socials{margin-top:22px;}
-  .soc-lg{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:100px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--t-bg,rgb(5,8,12)) 50%,transparent);text-decoration:none;font-weight:800;font-size:14px;transition:border-color .2s;}
-  .soc-lg:hover{border-color:var(--orange);}
-
-  footer{padding-block:40px 48px;border-top:1px solid var(--line);}
-  .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;color:var(--text-dim);font-size:13px;}
-  .foot img{height:40px;width:auto;}
-  .foot nav{display:flex;gap:16px;flex-wrap:wrap;}
-  .foot nav a{text-decoration:none;}
-  .foot nav a:hover{color:var(--text);}
-  .age18{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--red);color:var(--red);font-size:11px;font-weight:800;margin-inline-end:8px;vertical-align:middle;}
-
-  /* mobile sticky bar */
-  .mobile-bar{
-    display:none;position:fixed;left:16px;right:16px;bottom:calc(38px + env(safe-area-inset-bottom,0px));z-index:60;
-    padding:9px;border-radius:100px;gap:8px;background:var(--surface-2);
-    backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
-    border:1px solid var(--line-strong);box-shadow:0 16px 40px -8px rgba(0,0,0,.6);
-    opacity:0;transform:translateY(28px) scale(.85);pointer-events:none;
-    transition:opacity .2s ease,transform .2s ease;
-  }
-  @media(max-width:759px){.mobile-bar{display:flex;}}
-  .mobile-bar.show{opacity:1;transform:none;pointer-events:auto;transition:opacity .3s ease,transform .5s cubic-bezier(.34,1.56,.64,1);}
-  .mobile-bar a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 6px;border-radius:100px;
-    font-size:13px;font-weight:800;border:1px solid transparent;cursor:pointer;text-decoration:none;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  }
-  .mobile-bar svg{flex-shrink:0;}
-  .mobile-bar .mb-call{background:var(--red);color:var(--t-on-accent,#fff);}
-  .mobile-bar .mb-save{background:var(--surface);border-color:var(--line-strong);}
-
-  /* lightbox */
-  .lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:calc(64px + env(safe-area-inset-top,0px)) 16px calc(84px + env(safe-area-inset-bottom,0px));background:rgba(3,5,8,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
-  .lb.open{display:flex;}
-  .lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:min(1200px,100%);max-height:100%;}
-  .lb img{max-width:100%;max-height:calc(100vh - 220px);max-height:calc(100dvh - 220px);width:auto;border-radius:14px;border:1px solid var(--line-strong);box-shadow:0 40px 100px -30px color-mix(in srgb,var(--t-accent2,rgb(255,74,40)) 45%,transparent);}
-  .lb figcaption{display:flex;align-items:center;gap:12px;font-weight:800;font-size:15px;}
-  .lb figcaption .cnt{font-size:12px;color:var(--text-dim);font-weight:600;}
-  .lb-btn{position:absolute;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);border:1px solid var(--line-strong);cursor:pointer;}
-  .lb-close{top:calc(14px + env(safe-area-inset-top,0px));right:14px;}
-  .lb-prev,.lb-next{top:50%;transform:translateY(-50%);}
-  .lb-prev{left:14px;} .lb-next{right:14px;}
-  @media(max-width:759px){.lb-prev,.lb-next{top:auto;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:none;} .lb-prev{left:calc(50% - 56px);} .lb-next{right:calc(50% - 56px);}}
-
-  /* ---------- header (liegt über dem Hero-Foto) ---------- */
-  header.top{position:fixed;left:0;right:0;top:0;z-index:40;padding-top:env(safe-area-inset-top,0px);
-    background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,backdrop-filter .3s;}
-  header.top.solid{background:color-mix(in srgb,var(--bg) 86%,transparent);border-bottom-color:var(--line);
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
-
-  /* ---------- hero ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-  .hero-photo{position:absolute;inset:0 0 auto 0;height:60svh;z-index:0;overflow:hidden;}
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform-origin:50% 40%;
-    transition:transform 1.8s cubic-bezier(.16,.8,.24,1),filter 1.2s ease;}
-  html.js:not(.ready) .hero-photo img{transform:scale(1.14);filter:brightness(.55);}
-  .hero-photo::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 55%,transparent) 0%,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 0%,transparent) 22%,color-mix(in srgb,var(--t-bg,rgb(5,8,12)) 0%,transparent) 45%,color-mix(in srgb,var(--t-bg,rgb(5,8,12)) 80%,transparent) 78%,var(--bg) 100%);}
-  .hero-body{position:relative;z-index:1;width:100%;padding-top:36svh;padding-bottom:28px;}
-  .hero .script{font-size:24px;margin:0 0 6px;display:inline-block;transform:rotate(-3deg);transform-origin:left;}
-  .hero h1{font-size:clamp(33px,8.9vw,72px);line-height:1.02;letter-spacing:-.025em;margin:0 0 20px;max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.5);}
-  @media(min-width:980px){
-    .hero-photo{inset:0;height:auto;}
-    .hero-photo::after{background:linear-gradient(90deg,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 94%,transparent) 0%,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 75%,transparent) 38%,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 10%,transparent) 70%),linear-gradient(180deg,color-mix(in srgb,var(--t-shade,rgb(5,8,12)) 50%,transparent),transparent 20%,transparent 80%,var(--bg));}
-    .hero-body{padding-top:120px;padding-bottom:64px;}
-    .hero-body > *{max-width:600px;}
-  }
-
-  /* Neon-Schild: Öffnungsstatus */
-  .sign{display:block;text-decoration:none;margin:0 0 22px;}
-  .sign-word{font-family:'Kaushan Script',cursive;font-size:clamp(30px,8.6vw,44px);line-height:1.05;display:block;
-    color:var(--t-sign,#fff2dc);opacity:.95;}
-  .sign.lit .sign-word{text-shadow:0 0 4px var(--t-gold2,#fff3de),0 0 12px var(--t-gold,#ffb45a),0 0 26px var(--t-accent2,#ff7a24),0 0 46px var(--t-accent,#e8132b);}
-  html.ready .sign.lit .sign-word{animation:neonOn 1.1s steps(1,end) .35s both;}
-  .sign.dim .sign-word{color:var(--t-dim,#f3dcc0);text-shadow:0 0 18px color-mix(in srgb,var(--t-accent2,rgb(255,120,50)) 28%,transparent);}
-  @keyframes neonOn{0%{opacity:.15;text-shadow:none;}8%{opacity:1;}12%{opacity:.2;text-shadow:none;}20%{opacity:1;}24%{opacity:.35;text-shadow:none;}34%,100%{opacity:.95;}}
-  .sign-when{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-top:6px;font-size:16px;font-weight:700;color:var(--text);}
-  .sign-rel{font-size:13.5px;font-weight:600;color:var(--gold);}
-  html:is([lang="hu"],[lang="sk"],[lang="cs"]) .sign-word{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:700;}
-
-  .hero-cta{display:grid;gap:10px;}
-  .btn-call{display:flex;align-items:center;justify-content:center;gap:12px;padding:17px 22px;border-radius:14px;
-    background:var(--red);color:var(--t-on-accent,#fff);text-decoration:none;font-weight:800;font-size:16px;transition:background .2s,transform .15s;}
-  .btn-call:active{transform:scale(.98);}
-  .btn-call:hover{background:var(--t-hover,#c90f24);}
-  .btn-call .num{font-weight:700;opacity:.9;font-size:15px;}
-  .btn-call span:first-child{display:flex;align-items:center;gap:10px;}
-  .hero-sec{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .hero-sec a{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px 8px;border-radius:14px;text-decoration:none;
-    font-weight:700;font-size:13.5px;white-space:nowrap;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--t-card,rgb(14,21,28)) 60%,transparent);}
-  .hero-sec a:active{background:var(--surface-2);}
-  @media (hover:hover) and (pointer:fine){ .hero-sec{grid-template-columns:1fr;} .hero-cta{max-width:420px;} }
-
-  .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin:26px 0 0;}
-  .facts div{padding:0 18px;border-inline-start:1px solid var(--line-strong);}
-  .facts div:first-child{padding-inline-start:0;border:0;}
-  .facts dt{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:24px;line-height:1.1;}
-  .facts dd{margin:2px 0 0;font-size:12.5px;color:var(--text-dim);font-weight:600;}
-  .hero-sub{color:var(--text-dim);font-size:15.5px;line-height:1.6;margin:20px 0 0;max-width:560px;}
-
-  /* ---------- Preistafel ---------- */
-  .board-wrap{max-width:720px;}
-  .sub-h{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 14px;}
-  .hours-wrap{max-width:720px;margin-bottom:40px;}
-  .hours-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-strong);}
-  .hours-list li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;}
-  .hours-list li span{font-weight:600;color:var(--text-dim);}
-  .hours-list li b{font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums;}
-  .hours-list li.hot b,.hours-list li.hot span{color:var(--gold);}
-  .board{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;}
-  .board th,.board td{padding:14px 6px;text-align:end;border-bottom:1px solid var(--line);}
-  .board thead th{vertical-align:bottom;border-bottom:1px solid var(--line-strong);padding-top:0;}
-  .board thead th .d{display:block;font-size:15px;font-weight:800;color:var(--text);}
-  .board thead th .m{display:block;font-size:11px;font-weight:700;color:var(--text-dim);white-space:nowrap;}
-  .board [data-col="4"]{border-inline-end:1px solid var(--line-strong);padding-inline-end:12px;}
-  .board [data-col="5"]{padding-inline-start:12px;}
-  .board thead th .t{display:block;font-size:12px;font-weight:600;color:var(--text-dim);margin-top:2px;white-space:nowrap;}
-  .board thead th .tag{display:block;height:18px;font-size:11.5px;font-weight:800;color:var(--gold);white-space:nowrap;}
-  .board tbody th{text-align:start;font-weight:700;font-size:15px;padding-inline-start:0;}
-  .board tbody th small{display:block;font-size:12px;font-weight:500;color:var(--text-faint);}
-  .board td{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:600;color:var(--text-dim);width:22%;}
-  .board td small{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;margin-inline-start:2px;}
-  .board .hot{color:var(--gold);}
-  .board td.hot{background:linear-gradient(180deg,color-mix(in srgb,var(--t-gold,rgb(255,194,61)) 7%,transparent),color-mix(in srgb,var(--t-gold,rgb(255,194,61)) 7%,transparent));}
-  .board thead th.hot .d{color:var(--gold);}
-  .board-notes{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:13.5px;color:var(--text-dim);}
-  .board-notes li{display:flex;gap:8px;}
-  .board-notes .ok{color:var(--lagoon);font-weight:800;}
-  @media(max-width:380px){ .board td{font-size:21px;} .board tbody th{font-size:14px;} }
-
-  .offer{margin-top:34px;padding:4px 0 4px 18px;border-inline-start:3px solid var(--gold);max-width:620px;}
-  .offer h3{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 8px;}
-  .offer p{margin:0;color:var(--text-dim);font-size:15px;line-height:1.6;}
-  .offer p b{color:var(--text);}
-
-  /* Regeln ohne Kartenraster */
-  .creed{display:grid;gap:4px;margin:0 0 28px;}
-  .creed p{margin:0;font-family:'Fraunces',Georgia,serif;font-size:clamp(26px,7vw,40px);font-weight:700;line-height:1.15;}
-  .creed p:nth-child(2){color:var(--gold);}
-  .rulelist{list-style:none;margin:0;padding:0;display:grid;gap:0;max-width:760px;}
-  @media(min-width:760px){.rulelist{grid-template-columns:1fr 1fr;column-gap:40px;}}
-  .rulelist li{padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--text-dim);}
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-
-  /* ===== Farbdesigns (mk-theme): --t-* gibt es nur, wenn der Kunde ein Design gewählt hat ===== */
-  header.top{background:var(--t-header-bg,transparent)}
-  @media(min-width:980px){
-    /* Computer: Hero-Text steht auf dem abgedunkelten Foto → immer helle Schrift */
-    .hero-body{--text:var(--t-photo-text,#fbf6ef);--text-dim:var(--t-photo-dim,#aab2b8);color:var(--text)}
-    .hero-sec a{background:rgba(14,21,28,.6)}
-    .sign-word{color:var(--t-hero-accent,#fff2dc)}
-    .hero .script{color:var(--t-hero-accent,var(--gold))}
+  /* Auftritt: die Karte richtet sich einmal auf */
+  html.js .card{animation:rise 1s var(--ease) both}
+  html.js .actions{animation:fade .8s .35s var(--ease) both}
+  @keyframes rise{from{opacity:0;transform:perspective(900px) rotateX(16deg) translateY(28px)}to{opacity:1;transform:none}}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){html.js .card,html.js .actions{animation:none}}
+  @media(min-height:820px){main{padding-bottom:6vh}}
+  @media(max-height:700px){
+    .card{padding:20px 20px 18px}.card .logo{width:min(56%,220px)}.card .rule{margin:12px 0}
+    .card dl{margin-top:12px;gap:6px}.card dd{font-size:15px}section.vcard{gap:14px}.actions{gap:8px}
+    .btn{min-height:50px}.btn-site{min-height:44px}header.top{padding-top:calc(8px + env(safe-area-inset-top,0px))}
   }
 </style>
 </head>
 <body>
-
-<!-- ===== 3D Loader: Flug durch Palmwedel ===== -->
-<div class="ld" aria-hidden="true">
-  <div class="ld-glow"></div>
-  <div class="ld-cam"><div class="ld-world" id="ldWorld"><img class="ld-logo" src="img/logo-sm.png" alt="" width="360" height="213"></div></div>
-  <div class="ld-info"><div class="ld-fact" id="ldFact"></div><div class="ld-bar"><span></span></div></div>
-</div>
-<script>
-/* Palmwedel prozedural als SVG erzeugen und im Raum verteilen */
-(function(){
-  var w = document.getElementById("ldWorld"); if(!w) return;
-  var NS = "http://www.w3.org/2000/svg";
-  function frond(len, bend, n, seed){
-    var d = "";
-    for(var i = 1; i <= n; i++){
-      var t = i / (n + 1), x = t * len, y = bend * t * t * len;
-      var tx = 1, ty = 2 * bend * t, m = Math.sqrt(tx*tx + ty*ty); tx /= m; ty /= m;
-      var nx = -ty, ny = tx;
-      var L = len * .46 * (1 - t * .72) * (.82 + .36 * (((i * 37 + seed) % 11) / 11));
-      for(var s = -1; s <= 1; s += 2){
-        var a = .62 + .12 * (((i * 13 + seed) % 7) / 7);
-        var lx = tx * Math.cos(a) + s * nx * Math.sin(a), ly = ty * Math.cos(a) + s * ny * Math.sin(a);
-        var ex = x + lx * L, ey = y + ly * L + L * .18;           // Spitze hängt leicht durch
-        var px = -ly, py = lx, wd = L * .085;
-        var mx = x + lx * L * .5, my = y + ly * L * .5 + L * .05;
-        var bx = x + tx * len * .03, by = y + ty * len * .03;
-        d += "M"+x.toFixed(1)+" "+y.toFixed(1)+"Q"+(mx+px*wd).toFixed(1)+" "+(my+py*wd).toFixed(1)+" "+ex.toFixed(1)+" "+ey.toFixed(1)
-           + "Q"+(mx-px*wd*.35).toFixed(1)+" "+(my-py*wd*.35).toFixed(1)+" "+bx.toFixed(1)+" "+by.toFixed(1)+"Z";
-      }
-    }
-    var rib = "M0 0Q"+(len*.5).toFixed(1)+" 0 "+len.toFixed(1)+" "+(bend*len).toFixed(1);
-    return {leaves:d, rib:rib};
-  }
-  // Zielbild am Ende des Flugs (Welt bei translateZ(900px), Perspektive 700px):
-  // [Seite, x (Anteil halbe Breite), y (Anteil halbe Höhe), z, Winkel, Länge (Anteil Breite), Biegung, nah?]
-  var F = [
-    [-1,1.06,-.92,-2400, 42,.5,.2,0], [1,1.06,-.86,-2350, 38,.5,.2,0],
-    [-1,1.04,-.5,-2250, 20,.4,.18,0], [1,1.04,-.42,-2200, 24,.4,.18,0],
-    [-1,1.08,.05,-2300, -4,.3,.16,0], [1,1.08,.12,-2250,  4,.3,-.16,0],
-    [-1,1.04,.55,-2250,-24,.42,-.2,0],[1,1.04,.5,-2300,-20,.42,-.2,0],
-    [-1,1.06,.95,-1500,-44,.55,-.22,0],[1,1.06,.9,-1450,-40,.55,-.22,0],
-    [-1,1.08,-.7,-1450, 30,.48,.22,0], [1,1.08,-.75,-1400, 34,.48,.22,0],
-    [-1,1.12,-1.0,-700, 48,.6,.26,1], [1,1.15,1.0,-650,-48,.6,-.26,1]
-  ];
-  var vw = Math.max(320, innerWidth), vh = Math.max(480, innerHeight);
-  var frag = document.createDocumentFragment();
-  F.forEach(function(f, k){
-    var sc = 700 / (-200 - f[3]);                       // Projektionsmaßstab im Endbild
-    var X = f[0] * f[1] * (vw / 2) / sc, Y = f[2] * (vh / 2) / sc, W = Math.round(f[5] * vw / sc);
-    var p = frond(W, f[6], 15, k * 7);
-    var el = document.createElement("div"); el.className = "ld-f" + (f[7] ? " near" : "");
-    el.style.transform = "translate3d(" + X.toFixed(0) + "px," + Y.toFixed(0) + "px," + f[3] + "px)" + (f[0] > 0 ? " scaleX(-1)" : "") + " rotate(" + f[4] + "deg)";
-    el.style.setProperty("--sw", (4 + (k % 4)) + "s");
-    var svg = document.createElementNS(NS, "svg");
-    svg.setAttribute("width", W); svg.setAttribute("height", W * .9);
-    svg.setAttribute("viewBox", "0 " + (-W * .45) + " " + W + " " + (W * .9));
-    svg.style.top = (-W * .45) + "px";
-    var tone = f[7] ? "#030605" : (f[3] < -2000 ? "#1b2c22" : "#0d1a13");
-    svg.innerHTML = '<path d="' + p.leaves + '" fill="' + tone + '" stroke="rgba(255,150,70,.22)" stroke-width="1"/>'
-                  + '<path d="' + p.rib + '" fill="none" stroke="' + tone + '" stroke-width="' + (W * .012) + '" stroke-linecap="round"/>';
-    el.appendChild(svg); frag.appendChild(el);
-  });
-  for(var i = 0; i < 16; i++){
-    var s = document.createElement("i"); s.className = "ld-fly";
-    s.style.setProperty("--x", (((i * 53) % 90) - 45) + "vw");
-    s.style.setProperty("--z", (-1600 + (i * 97) % 1200) + "px");
-    s.style.setProperty("--d", (5 + (i % 5)) + "s");
-    s.style.setProperty("--dl", (-(i * .7)) + "s");
-    frag.appendChild(s);
-  }
-  w.insertBefore(frag, w.firstChild);
-})();
-</script>
-
-<div class="progress" aria-hidden="true"><span id="prog"></span></div>
+<div class="sky" aria-hidden="true"></div>
 
 <header class="top">
-  <div class="wrap top-inner">
-    <a class="brand" href="#top" aria-label="Erlebnissauna Caribik"><img src="img/logo-sm.png" alt="Caribik" width="360" height="213"></a>
-    <nav class="nav-links">
-      <a href="#eintritt" data-i18n="navHours">Öffnungszeiten</a>
-      <a href="#erlebniswelt" data-i18n="navRooms">Erlebniswelt</a>
-      <a href="#wellness" data-i18n="navWellness">Wellness</a>
-      <a href="#uebernachten" data-i18n="navStay">Übernachten</a>
-      <a href="#infos" data-i18n="navInfo">Clubregeln</a>
-      <a href="#kontakt" data-i18n="navContact">Kontakt</a>
-    </nav>
-    <div class="nav-right">
-      <a class="nav-phone" href="tel:+436642985551"><span class="num">0664 298 5551</span></a>
-      <div class="langbox">
-        <button id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Sprache / Language">
-          <span id="langFlag">🇦🇹</span><span id="langCode">DE</span><span class="car">▾</span>
-        </button>
-        <div id="langPanel" role="listbox"></div>
-      </div>
-    </div>
+  <div class="langbox">
+    <button id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Sprache / Language"><span id="langCode">DE</span></button>
+    <div id="langPanel" role="listbox"></div>
   </div>
 </header>
 
 <main id="top">
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="hero-photo"><img src="img/barbereich-s.jpg" srcset="img/barbereich-s.jpg 720w, img/barbereich.jpg 1400w" sizes="100vw" alt="Die Bar unter Palmen in der Erlebnissauna Caribik" width="720" height="480" fetchpriority="high"></div>
-    <div class="wrap hero-body">
-      <p class="script" data-i18n="motto">Alles kann, nichts muss.</p>
-      <h1 data-i18n-html="h1">Europas größter &amp; phantasievollster Swingerclub</h1>
-
-      <a class="sign dim" id="sign" href="#eintritt">
-        <span class="sign-word" id="signWord">Öffnungszeiten</span>
-        <span class="sign-when"><span id="signWhen">Fr 19:00 – 1:00 · Sa 20:00 – 3:00</span><span class="sign-rel" id="signRel"></span></span>
-      </a>
-
-      <div class="hero-cta">
-        <a class="btn-call" href="tel:+436642985551">
-          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="ctaCall">Anrufen</span></span>
-        </a>
-        <div class="hero-sec">
-          <a class="save-contact" href="caribik.vcf"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-i18n="ctaSave">Kontakt speichern</span></a>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Erlebnissauna+Caribik,+Seisenegg+14,+3322+Seisenegg" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8z"/></svg><span data-i18n="ctaRoute">Route planen</span></a>
-        </div>
-      </div>
-
-      <dl class="facts">
-        <div><dt>4.000 m²</dt><dd data-i18n="fM2">auf 2 Etagen</dd></div>
-        <div><dt>3</dt><dd data-i18n="fBars">Bars</dd></div>
-        <div><dt>4</dt><dd data-i18n="fSaunas">Saunen</dd></div>
+  <section class="vcard" aria-label="Visitenkarte">
+    <article class="card">
+      <img class="logo" src="img/logo.png" alt="Caribik" width="600" height="354">
+      <div class="rule" aria-hidden="true"></div>
+      <h1 data-i18n="name">Erlebnissauna Caribik</h1>
+      <p class="what" data-i18n="what">Swingerclub &amp; Erlebnissauna</p>
+      <dl>
+        <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+          <dt data-i18n="addrT">Adresse</dt><dd>Seisenegg 14<br>3322 Seisenegg, <span data-i18n="region">Niederösterreich</span></dd></div>
+        <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <dt>E-Mail</dt><dd><a href="mailto:office@caribik.at">office@caribik.at</a></dd></div>
+        <div class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          <dt>Website</dt><dd><a href="https://www.caribik.at" target="_blank" rel="noopener">www.caribik.at</a></dd></div>
       </dl>
-      <p class="hero-sub" data-i18n="sub">4.000 m² auf zwei Etagen, 3 Bars, 4 Saunen, zahlreiche Themen- und Spielzimmer und ein großer Garten – mitten in Niederösterreich. Der Erotiktreff für Neueinsteiger und erfahrene Swinger.</p>
-    </div>
-  </section>
+    </article>
 
-  <!-- ===== Eintritt & Öffnungszeiten ===== -->
-  <section class="block" id="eintritt">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 data-i18n="prTitle">Eintritt &amp; Öffnungszeiten</h2>
-        <p data-i18n="prSub">Keine Reservierung nötig – einfach vorbeikommen und bei uns umziehen.</p>
-      </div>
-      <div class="hours-wrap reveal">
-        <h3 class="sub-h" data-i18n="hoursTitle">Öffnungszeiten</h3>
-        <ul class="hours-list">
-          <li><span data-i18n="hThu">Jeden 1. Donnerstag im Monat</span><b data-time="19:00 – 1:00">19:00 – 1:00 Uhr</b></li>
-          <li><span data-i18n="dFri">Freitag</span><b data-time="19:00 – 1:00">19:00 – 1:00 Uhr</b></li>
-          <li><span data-i18n="dSat">Samstag</span><b data-time="20:00 – 3:00">20:00 – 3:00 Uhr</b></li>
-        </ul>
-      </div>
-      <div class="board-wrap reveal">
-        <h3 class="sub-h" data-i18n="prPrices">Eintrittspreise</h3>
-        <table class="board">
-          <caption class="sr-only" data-i18n="prUnit">Eintrittspreise ab, in Euro</caption>
-          <thead>
-            <tr>
-              <th scope="col"><span class="sr-only" data-i18n="prCat">Gast</span></th>
-              <th scope="col" data-col="4"><span class="tag"></span><span class="d" data-i18n="tThu">Do</span><span class="m" data-i18n="thuShort">1. im Monat</span><span class="t">19:00–1:00</span></th>
-              <th scope="col" data-col="5"><span class="tag"></span><span class="d" data-i18n="tFri">Fr</span><span class="m" aria-hidden="true">&nbsp;</span><span class="t">19:00–1:00</span></th>
-              <th scope="col" data-col="6"><span class="tag"></span><span class="d" data-i18n="tSat">Sa</span><span class="m" aria-hidden="true">&nbsp;</span><span class="t">20:00–3:00</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row" data-i18n="cLadies">Solodamen</th><td data-col="4">20<small>€</small></td><td data-col="5">20<small>€</small></td><td data-col="6">20<small>€</small></td></tr>
-            <tr><th scope="row"><span data-i18n="cCouples">Paare</span><small data-i18n="cCouplesSub">pro Paar (Mann + Frau)</small></th><td data-col="4">59<small>€</small></td><td data-col="5">74<small>€</small></td><td data-col="6">79<small>€</small></td></tr>
-            <tr><th scope="row" data-i18n="cMen">Soloherren</th><td data-col="4">69<small>€</small></td><td data-col="5">84<small>€</small></td><td data-col="6">89<small>€</small></td></tr>
-            <tr><th scope="row">TV/TS</th><td data-col="4">30<small>€</small></td><td data-col="5">50<small>€</small></td><td data-col="6">50<small>€</small></td></tr>
-          </tbody>
-        </table>
-        <ul class="board-notes">
-          <li><span class="ok">✓</span><span data-i18n="prIncl">Im Eintritt inklusive: Speisen &amp; Getränke (außer Red Bull), Handtücher und Kondome.</span></li>
-          <li><span>&nbsp;</span><span data-i18n="prFine">Preise ab – bei Sonderevents können sie abweichen.</span></li>
-        </ul>
-      </div>
-
-      <div class="offer reveal">
-        <h3 data-i18n="freeTitle">Zum ersten Mal hier – als Paar?</h3>
-        <p data-i18n-html="freeText">Dann schenken wir euch <b>samstags die ersten zwei Stunden (20:00 – 22:00 Uhr)</b> zum Reinschnuppern. Bleibt ihr länger, zahlt ihr nur den normalen Eintritt. Gilt nur, wenn ihr beide zum ersten Mal da seid – bitte beim Eingang Bescheid sagen.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Erlebniswelt ===== -->
-  <section class="block" id="erlebniswelt" style="padding-top:0">
-    <div class="wrap">
-      <div class="head-row reveal">
-        <div class="section-head">
-          <h2 data-i18n="rmTitle">Südsee-Atmosphäre unter Palmen.</h2>
-          <p data-i18n="rmSub">Mit viel Liebe und Fantasie gebaut: Hubschrauber, Straßenbahn, Darkroom, Teufelszimmer, Strenge Kammer und Wackelhütte. Wer es privater mag – Meereszimmer und Spiegelzimmer sind abschließbar.</p>
-        </div>
-      </div>
-      <div class="rooms" id="rooms">
-        <button type="button" class="room lz wide reveal" data-full="img/club.jpg"><img data-src="img/club-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_heli">Hubschrauber</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/strassenbahn.jpg"><img data-src="img/strassenbahn-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_tram">Straßenbahn</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/teufelszimmer.jpg"><img data-src="img/teufelszimmer-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_devil">Teufelszimmer</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/meereszimmer.jpg"><img data-src="img/meereszimmer-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_sea">Meereszimmer</b><span class="tag" data-i18n="tagLock">abschließbar</span></span></button>
-        <button type="button" class="room lz reveal" data-full="img/spiegelzimmer.jpg"><img data-src="img/spiegelzimmer-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_mirror">Spiegelzimmer</b><span class="tag" data-i18n="tagLock">abschließbar</span></span></button>
-        <button type="button" class="room lz wide reveal" data-full="img/strengekammer.jpg"><img data-src="img/strengekammer-s.jpg" alt="" width="720" height="478"><span class="cap"><b data-i18n="r_strict">Strenge Kammer</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/darkroom.jpg"><img data-src="img/darkroom-s.jpg" alt="" width="720" height="477"><span class="cap"><b>Darkroom</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/himmelszimmer.jpg"><img data-src="img/himmelszimmer-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_sky">Himmelszimmer</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/felsengrotte.jpg"><img data-src="img/felsengrotte-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_grotto">Felsengrotte</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/stufenzimmer.jpg"><img data-src="img/stufenzimmer-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_steps">Stufenzimmer</b></span></button>
-        <button type="button" class="room lz reveal" data-full="img/sexos.jpg"><img data-src="img/sexos-s.jpg" alt="" width="720" height="477"><span class="cap"><b data-i18n="r_play">Spielwiesen</b></span></button>
-        <button type="button" class="room lz wide reveal" data-full="img/eintritt.jpg"><img data-src="img/eintritt-s.jpg" alt="" width="720" height="479"><span class="cap"><b data-i18n="r_entry">Eingang</b></span></button>
-      </div>
-      <p class="swipe-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-i18n="swipe">Wischen für mehr</span></p>
-    </div>
-  </section>
-
-  <!-- ===== Wellness ===== -->
-  <section class="block" id="wellness" style="padding-top:0">
-    <div class="wrap split">
-      <div class="photo-wrap reveal">
-        <div class="photo-3d">
-          <div class="frame lz"><img data-src="img/wellness-s.jpg" data-srcset="img/wellness-s.jpg 720w, img/wellness.jpg 1400w" sizes="(min-width:980px) 560px, 92vw" alt="Wellnessbereich mit Sauna" width="720" height="480"></div>
-        </div>
-      </div>
-      <div class="reveal" style="--d:.1s">
-        <div class="section-head" style="margin-bottom:0">
-          <h2 data-i18n="wlTitle">Die Seele baumeln lassen.</h2>
-          <p data-i18n="wlSub">Vier verschiedene Saunen, Massageraum, Vitarium und Ruheräume – und sobald die Nächte wärmer werden, wartet unser großer Außenbereich, der „Garten der Lust“.</p>
-        </div>
-        <div class="pills">
-          <span class="pill l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c-1 2 1 3 0 5M12 3c-1 2 1 3 0 5M16 3c-1 2 1 3 0 5M3 12h18v3a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/></svg><span data-i18n="w1">Aufgusssauna</span></span>
-          <span class="pill l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg><span data-i18n="w2">Kräutersauna</span></span>
-          <span class="pill l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><span data-i18n="w3">Finnische Sauna</span></span>
-          <span class="pill l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span data-i18n="w4">Infrarotkabine</span></span>
-          <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span data-i18n="w5">Massageraum</span></span>
-          <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg><span data-i18n="w6">Vitarium &amp; Ruheräume</span></span>
-          <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35z"/><path d="M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14"/></svg><span data-i18n="w7">Garten der Lust</span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Essen & Trinken ===== -->
-  <section class="block" id="bar" style="padding-top:0">
-    <div class="wrap split rev">
-      <div class="photo-wrap reveal">
-        <div class="photo-3d">
-          <div class="frame lz"><img data-src="img/barbereich-s.jpg" data-srcset="img/barbereich-s.jpg 720w, img/barbereich.jpg 1400w" sizes="(min-width:980px) 560px, 92vw" alt="Bar unter Palmen" width="720" height="480"></div>
-        </div>
-      </div>
-      <div class="reveal" style="--d:.1s">
-        <div class="section-head" style="margin-bottom:0">
-          <h2 data-i18n="fdTitle">3 Bars. Grillbuffet. Dessert.</h2>
-          <p data-i18n="fdSub">An unseren 3 Bars erfrischt ihr euch bei einem kühlen Drink, plaudert gemütlich und lernt euch kennen – große Auswahl mit und ohne Alkohol.</p>
-        </div>
-        <div class="menu">
-          <div><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11a7 7 0 0 0 14 0M12 4v3"/></svg></span><span><b data-i18n="dFri">Freitag</b><span data-i18n="fdFri">Snacks wie heiße Würstel und Toast</span></span></div>
-          <div><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span><b data-i18n="dSatOnly">Samstag</b><span data-i18n="fdSat">Leckeres vom Grill, Salate und ein süßes Dessertbuffet</span></span></div>
-        </div>
-        <p class="incl-line"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="fdIncl">Speisen und Getränke (außer Red Bull) sind im Eintritt inklusive.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Übernachten ===== -->
-  <section class="block" id="uebernachten" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 data-i18n="stTitle">Kein Heimweg? Bleibt einfach über Nacht.</h2>
-      </div>
-      <div class="stay-grid">
-        <article class="stay reveal">
-          <div class="media lz"><img data-src="img/zimmer-s.jpg" alt="Zimmer" width="720" height="480"><span class="pp"><b>59 €</b> <small data-i18n="perNight">/ Nacht</small></span></div>
-          <div class="body"><h3 data-i18n="z1t">Zimmer</h3><p data-i18n="z1d">Vier Zimmer direkt am Clubgelände für max. 2 Personen – mit Bad, WC und Sat-TV.</p></div>
-        </article>
-        <article class="stay reveal" style="--d:.1s">
-          <div class="media lz"><img data-src="img/huette-s.jpg" alt="Bambushütte" width="720" height="479"><span class="pp"><b>59 €</b> <small data-i18n="perNight">/ Nacht</small></span></div>
-          <div class="body"><h3 data-i18n="z2t">Bambushütte</h3><p data-i18n="z2d">Je nach Witterung von Mai bis Anfang Oktober, nur für Paare. Dusche und WC im Außenbereich bzw. Gemeinschaftsdusche.</p></div>
-        </article>
-      </div>
-      <div class="stay-info">
-        <div class="si reveal"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span><span><b>Check-in / Check-out</b><span data-i18n="checkTimes">1 Std. vor Cluböffnung · bis 10:30 Uhr am Folgetag. Schlüssel im Club.</span></span></div>
-        <div class="si reveal" style="--d:.08s"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span><b data-i18n="stornoT">Storno</b><span data-i18n="stornoD">Bis 48 Std. vor Cluböffnung kostenlos, danach 100 %.</span></span></div>
-        <div class="si reveal" style="--d:.16s"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></span><span><b data-i18n="moreT">Mehr Möglichkeiten</b><span data-i18n="moreD">Pension Leichtfried: 10 % mit Code „caribik“.</span> Taxi Andy: <a href="tel:+436506233049" class="num">0650 6233049</a></span></div>
-      </div>
-      <div class="stay-cta reveal">
-        <a class="btn btn-primary" href="https://caribik.at/zimmer-buchen/" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg><span data-i18n="bookBtn">Zimmer buchen</span></a>
-        <a class="btn btn-ghost" href="mailto:office@caribik.at?subject=N%C3%A4chtigung%20Caribik"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><span data-i18n="bookMail">Per E-Mail anfragen</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Clubregeln & Dresscode ===== -->
-  <section class="block" id="infos" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 data-i18n="ruTitle">Freiheit braucht ein paar Regeln.</h2>
-        <p data-i18n="ruSub">Für die meisten selbstverständlich – damit sich alle wohlfühlen.</p>
-      </div>
-      <div class="creed reveal">
-        <p data-i18n="ru1">Alles kann, nichts muss!</p>
-        <p data-i18n="ru2">Ein Nein ist ein Nein!</p>
-        <p data-i18n="ru3">Es gilt absolute Diskretion.</p>
-      </div>
-      <ul class="rulelist reveal">
-        <li data-i18n="ru4">Zutritt erst ab 18 Jahren – nicht für Betrunkene.</li>
-        <li data-i18n="ru5">Handys und Kameras bleiben im Spind.</li>
-        <li data-i18n="ru6">Keine Drogen, keine Prostitution, kein übermäßiger Alkohol.</li>
-        <li data-i18n="ru7">Sex nur in den Spielzimmern – nicht an der Bar oder in der Sauna.</li>
-        <li data-i18n="ru8">Hygiene zählt: Duschen, Handtücher und Kondome sind überall vorhanden.</li>
-      </ul>
-
-      <div class="dress">
-        <div class="card reveal">
-          <h3 data-i18n="drLadies">Ladies</h3>
-          <ul>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="drL1">Dessous in Textil, Lack, Leder oder Latex</span></li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="drL2">Corsage, Minikleid, Hotpants, Catsuit</span></li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="drL3">High Heels sind gerne gesehen</span></li>
-          </ul>
-        </div>
-        <div class="card reveal" style="--d:.08s">
-          <h3 data-i18n="drGents">Gentlemen</h3>
-          <ul>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="drG1">Ordentliche Shorts, Lack, Leder, Latex, Fetisch</span></li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="drG2">Netzhemd, T-Shirt, Polo oder Hemd &amp; Anzughose</span></li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="drG3">Saubere Clubschuhe oder Flip-Flops</span></li>
-          </ul>
-        </div>
-        <div class="card no reveal" style="--d:.16s">
-          <h3>No-Gos</h3>
-          <ul>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span data-i18n="drN1">Blue Jeans, Sportbekleidung, Straßenschuhe</span></li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span data-i18n="drN2">Nur ein Handtuch oder komplett nackt</span></li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span data-i18n="drN3">Schuhe auf den Spielwiesen</span></li>
-          </ul>
-        </div>
-      </div>
-      <p class="dress-note reveal"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span data-i18n="drNote">Bitte erst bei uns umziehen – wer schon im Outfit kommt, trägt „Straßenkleidung“. Nichts Passendes zuhause? Im kleinen Club-Shop findet ihr etwas.</span></p>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="block" id="faq" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 data-i18n="fqTitle">Häufige Fragen</h2>
-      </div>
-      <div class="faq">
-        <details class="reveal" data-yt="WTPGTYyvDqI"><summary><span data-i18n="q1">Muss man mit anderen Sex haben?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a1">Nein, natürlich nicht. Oberster Grundsatz: Ein Nein ist und bleibt ein Nein. Viele kommen auch nur zum Plaudern, Kennenlernen oder für die Sauna.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="yjhIuUTlTeE"><summary><span data-i18n="q4">Kann ich als Frau alleine kommen?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a4">Ja! Keine angetrunkenen Männer, genug Zimmer und Duschen, keine Verpflichtungen – bei uns gilt immer: Alles kann, nichts muss. Solodamen zahlen ab 20 €.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="Cwu-d3Jb7D0"><summary><span data-i18n="q6">Warum bekommt ein Soloherr nicht immer Einlass?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a6">Uns ist ein ausgewogenes Verhältnis zwischen Frauen und Männern wichtig. Lieber an der Tür ein ehrliches „leider nein“ als Eintritt zahlen und nur Männer antreffen.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="Q7gFl-CWY7A"><summary><span data-i18n="q5">Gibt es Zimmer, in die wir uns als Paar zurückziehen können?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a5">Ja. Spiegelzimmer, Meereszimmer, Telefonzelle und Strenge Kammer sind verschließbar. Manche Zimmer haben eine Kette: zu = „Zusehen erlaubt“, offen = „Mitmachen erwünscht“.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="6g9Ga39cgnI"><summary><span data-i18n="q8">Was ziehe ich an?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a8">Clubkleidung statt Straßenkleidung: Damen z. B. Dessous, Corsage oder Minikleid, Herren ordentliche Shorts, Hemd oder ein Fetisch-Outfit. Bitte erst bei uns umziehen – alles Weitere steht oben beim Dresscode.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="LuozePjXilw"><summary><span data-i18n="q3">Was sollte ich mitbringen?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a3">Nur gute Laune und passende Clubkleidung. Handtücher, Pflegeprodukte und Kondome sind vorhanden, für Kleidung und Wertsachen gibt es versperrbare Spinde.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="bcm1FZ6d_14"><summary><span data-i18n="q14">Wann hat die Caribik offen?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a14">Jeden 1. Donnerstag im Monat von 19:00 bis 1:00 Uhr, jeden Freitag von 19:00 bis 1:00 Uhr und jeden Samstag von 20:00 bis 3:00 Uhr.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="3knyZVNquoE"><summary><span data-i18n="q2">Muss man reservieren?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a2">Nein – außer bei Sonderveranstaltungen. Reservierungen für Nächtigungen nehmen wir ausschließlich per E-Mail an office@caribik.at entgegen.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="fCJBpztF8mQ"><summary><span data-i18n="q9">Muss ich wie ein Model aussehen?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a9">Nein. Schön ist, was gefällt – zu uns kommen Menschen aus allen Bereichen, ob dick, dünn, groß oder klein. Alle werden gleich respektiert und herzlich empfangen.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="rIYhG9QR6gk"><summary><span data-i18n="q10">Schadet ein Swingerclubbesuch unserer Beziehung?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a10">Das kann man vorher nicht sagen – wichtig ist, dass ihr es beide wollt. Sprecht vorher ab, wie weit ihr gehen möchtet. Erfahrene Paare sagen: Es gibt der Beziehung oft einen Extra-Kick.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="Ewnc5tOzxQY"><summary><span data-i18n="q11">Was ist mit der Eifersucht?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a11">Eifersucht hat beim Swingen nichts verloren. Setzt euch als Paar vorher klare Grenzen – dann steht einer schönen gemeinsamen Zeit in der Caribik nichts im Weg.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="BcPxkhS1QnE"><summary><span data-i18n="q12">Wer darf in den Club?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a12">Grundsätzlich jeder ab 18 – eine Einlassgarantie gibt es aber nicht. Betrunkene und Personen mit ansteckenden Krankheiten haben keinen Zutritt.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="3dgnLtcqaBU"><summary><span data-i18n="q13">Wie ist das mit Verhütung und Hygiene?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a13">Safety first: In jedem Spielzimmer liegen Kondome bereit – bitte benutzt sie. Duschen, Handtücher und Pflegeprodukte sind ausreichend vorhanden.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-        <details class="reveal" data-yt="fTxep6X9XuI"><summary><span data-i18n="q7">Was, wenn ich Bekannte treffe?</span><span class="pm">+</span></summary><div class="ans"><p data-i18n="a7">Beide Seiten sind in derselben Situation. What happens in the club, stays in the club – Diskretion ist uns heilig.</p>
-          <div class="yt"><button type="button" class="yt-btn" data-i18n-aria="faqPlay" aria-label="Video abspielen"><img alt="" width="480" height="360"><span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><span class="yt-cap" data-i18n="faqVid">Peter erklärt’s im Video</span></div></div></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Extras ===== -->
-  <section class="block" id="mehr" style="padding-top:0">
-    <div class="wrap">
-      <div class="extras">
-        <a class="ex g reveal" href="https://caribik.at/gutschein-bestellen/" target="_blank" rel="noopener"><span class="ico-sq"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span><h3><span data-i18n="exVoucher">Gutscheine</span><span>↗</span></h3><p data-i18n="exVoucherD">Das etwas andere Geschenk – online bestellen.</p></a>
-        <a class="ex reveal" style="--d:.06s" href="https://caribik.at/events/" target="_blank" rel="noopener"><span class="ico-sq"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.8 11.3 2 22l10.7-3.79M4 3h.01M22 8h.01M15 2h.01M22 20h.01M22 2l-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11-.11.7-.72 1.22-1.43 1.22H17M11 2l.33.82c.34.86-.2 1.82-1.11 1.98-.7.1-1.22.72-1.22 1.43V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2z"/></svg></span><h3><span>Events</span><span>↗</span></h3><p data-i18n="exEventsD">Aktuelle Events und Mottopartys im JOYclub.</p></a>
-        <a class="ex l reveal" style="--d:.12s" href="https://caribik.at/shop/" target="_blank" rel="noopener"><span class="ico-sq"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span><h3><span data-i18n="exShop">Onlineshop</span><span>↗</span></h3><p data-i18n="exShopD">Outfits und mehr bequem nach Hause bestellen.</p></a>
-        <a class="ex reveal" style="--d:.18s" href="https://caribik.at/faqs/" target="_blank" rel="noopener"><span class="ico-sq"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span><h3><span data-i18n="exVideo">FAQ-Videos</span><span>↗</span></h3><p data-i18n="exVideoD">Peter beantwortet persönlich die häufigsten Fragen.</p></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Kontakt ===== -->
-  <section class="block" id="kontakt" style="padding-top:0">
-    <div class="wrap">
-      <div class="ct-card reveal">
-        <div class="ct-grid">
-          <div>
-            <div class="section-head">
-              <h2 data-i18n="ctTitle">Wir freuen uns auf euch.</h2>
-              <p data-i18n="ctSub">Fragen zum ersten Besuch, zu Events oder zur Übernachtung? Ruft einfach an oder schreibt uns.</p>
-            </div>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="tel:+436642985551"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="ctaCall">Jetzt anrufen</span></a>
-              <a class="btn btn-ghost" href="mailto:office@caribik.at"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><span data-i18n="ctaEmail">E-Mail schreiben</span></a>
-            </div>
-            <div class="socials" style="flex-wrap:wrap">
-              <a class="soc-lg" href="https://www.facebook.com/share/1PNRjtDsCB/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</a>
-              <a class="soc-lg" href="https://www.instagram.com/erlebnissaunacaribik" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram</a>
-            </div>
-          </div>
-          <div class="rows">
-            <a class="row save save-contact" href="caribik.vcf">
-              <div class="l"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span>
-                <div><div class="label">vCard</div><div class="value" data-i18n="ctaSave">Kontakt speichern</div></div></div>
-              <svg class="go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-            </a>
-            <div class="row">
-              <div class="l"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
-                <div><div class="label" data-i18n="phoneLabel">Telefon</div><div class="value num"><a href="tel:+436642985551">+43 664 298 5551</a></div></div></div>
-              <button class="copy-btn" type="button" data-copy="+43 664 2985551" data-i18n="copy">Kopieren</button>
-            </div>
-            <div class="row">
-              <div class="l"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-                <div><div class="label" data-i18n="clubPhoneLabel">Club-Festnetz</div><div class="value num"><a href="tel:+43747264711">+43 7472 647 11</a></div></div></div>
-              <button class="copy-btn" type="button" data-copy="+43 7472 64711" data-i18n="copy">Kopieren</button>
-            </div>
-            <div class="row">
-              <div class="l"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
-                <div><div class="label" data-i18n="emailLabel">E-Mail</div><div class="value"><a href="mailto:office@caribik.at">office@caribik.at</a></div></div></div>
-              <button class="copy-btn" type="button" data-copy="office@caribik.at" data-i18n="copy">Kopieren</button>
-            </div>
-            <a class="row" href="https://www.google.com/maps/dir/?api=1&amp;destination=Erlebnissauna+Caribik,+Seisenegg+14,+3322+Seisenegg" target="_blank" rel="noopener">
-              <div class="l"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <div><div class="label" data-i18n="addressLabel">Adresse</div><div class="value">Seisenegg 14, 3322 Seisenegg</div></div></div>
-              <span class="copy-btn" data-i18n="ctaRoute">Route planen</span>
-            </a>
-            <a class="row" href="https://www.caribik.at" target="_blank" rel="noopener">
-              <div class="l"><span class="ico-sq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-                <div><div class="label">Website</div><div class="value">www.caribik.at</div></div></div>
-              <svg class="go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="actions">
+      <a class="btn btn-main" href="caribik.vcf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span data-i18n="save">Kontakt speichern</span></a>
+      <a class="btn btn-line" href="mailto:office@caribik.at"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span data-i18n="mail">Per E-Mail kontaktieren</span></a>
+      <a class="btn btn-site" href="https://www.caribik.at" target="_blank" rel="noopener"><span data-i18n="site">Zur Website caribik.at</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <a href="#top" aria-label="Caribik"><img src="img/logo-sm.png" alt="Caribik" width="360" height="213" loading="lazy"></a>
-    <span><span class="age18">18+</span><span data-i18n="footer">Zutritt nur ab 18 Jahren. Alles kann, nichts muss.</span></span>
-    <nav>
-      <a href="https://caribik.at/impressum/" target="_blank" rel="noopener" data-i18n="imprint">Impressum</a>
-      <a href="https://caribik.at/datenschutzerklaerung/" target="_blank" rel="noopener" data-i18n="privacy">Datenschutz</a>
-      <span>Seisenegg · Österreich</span>
-    </nav>
-  </div>
+  <span data-i18n="age">Zutritt ab 18 Jahren</span>
+  <a href="https://caribik.at/impressum/" target="_blank" rel="noopener" data-i18n="imprint">Impressum</a>
 </footer>
-
-<div class="mobile-bar">
-  <a class="mb-call" href="tel:+436642985551">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span data-i18n="ctaCall">Jetzt anrufen</span>
-  </a>
-  <a class="mb-save save-contact" href="caribik.vcf">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-    <span data-i18n="ctaSave">Kontakt speichern</span>
-  </a>
-</div>
-
-<div class="lb" id="lb" role="dialog" aria-modal="true">
-  <button class="lb-btn lb-close" type="button" id="lbClose" aria-label="Schließen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-  <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="‹"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-  <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="›"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
-  <figure><img id="lbImg" alt=""><figcaption><span id="lbTitle"></span><span class="cnt num" id="lbCount"></span></figcaption></figure>
-</div>
 
 <script src="i18n.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   var T = window.I18N || {};
-  var LANGS = [["de","🇦🇹","Deutsch"],["en","🇬🇧","English"],["hu","🇭🇺","Magyar"],["sk","🇸🇰","Slovenčina"],["cs","🇨🇿","Čeština"]];
-  var LOCALE = {de:"de-AT",en:"en-GB",hu:"hu-HU",sk:"sk-SK",cs:"cs-CZ"};
-
-  /* Deutsch = Inhalt im HTML (SEO), wird beim Start eingesammelt */
+  var LANGS = [["de","Deutsch"],["en","English"],["hu","Magyar"],["sk","Slovenčina"],["cs","Čeština"]];
   var DE = {};
   document.querySelectorAll("[data-i18n]").forEach(function(el){ var k = el.getAttribute("data-i18n"); if(!(k in DE)) DE[k] = el.innerHTML; });
-  document.querySelectorAll("[data-i18n-html]").forEach(function(el){ DE[el.getAttribute("data-i18n-html")] = el.innerHTML; });
-  var DE_EXTRA = {
-    stOpen:"Jetzt geöffnet", stTonight:"Heute Abend geöffnet", stNext:"Nächste Öffnung", stUntil:"bis {t} Uhr", stFrom:"ab {t} Uhr",
-    stLeft:"noch {r}", clock:"{t} Uhr", faqVid:"Peter erklärt’s im Video", faqPlay:"Video abspielen", tagNow:"jetzt", tagToday:"heute", tagNext:"nächste", copied:"Kopiert ✓", lbClose:"Schließen"
-  };
   var cur = "de";
-  function dict(){ return cur === "de" ? DE : (T[cur] || DE); }
-  function tx(k){ var d = dict(); return d[k] != null ? d[k] : (DE[k] != null ? DE[k] : DE_EXTRA[k]); }
-
-  /* ---- language switcher ---- */
+  function tx(k){ var d = cur === "de" ? DE : (T[cur] || DE); return d[k] != null ? d[k] : DE[k]; }
   var langBtn = document.getElementById("langBtn"), langPanel = document.getElementById("langPanel");
   LANGS.forEach(function(l){
     var b = document.createElement("button");
     b.type = "button"; b.setAttribute("role","option"); b.setAttribute("data-code", l[0]);
-    b.innerHTML = '<span>'+l[1]+'</span><span>'+l[2]+'</span><span class="code">'+l[0].toUpperCase()+'</span>';
-    b.addEventListener("click", function(){ apply(l[0]); closePanel(); });
+    b.innerHTML = "<span>"+l[1]+"</span><span class=\"code\">"+l[0].toUpperCase()+"</span>";
+    b.addEventListener("click", function(){ apply(l[0]); langPanel.classList.remove("open"); langBtn.setAttribute("aria-expanded","false"); });
     langPanel.appendChild(b);
   });
-  function openPanel(){ langPanel.classList.add("open"); langBtn.setAttribute("aria-expanded","true"); }
-  function closePanel(){ langPanel.classList.remove("open"); langBtn.setAttribute("aria-expanded","false"); }
-  langBtn.addEventListener("click", function(e){ e.stopPropagation(); langPanel.classList.contains("open") ? closePanel() : openPanel(); });
-  document.addEventListener("click", function(e){ if(!langPanel.contains(e.target) && !langBtn.contains(e.target)) closePanel(); });
-
+  langBtn.addEventListener("click", function(e){ e.stopPropagation(); var o = langPanel.classList.toggle("open"); langBtn.setAttribute("aria-expanded", o ? "true" : "false"); });
+  document.addEventListener("click", function(e){ if(!langPanel.contains(e.target)) langPanel.classList.remove("open"); });
   function apply(code){
     cur = (code === "de" || T[code]) ? code : "de";
     document.querySelectorAll("[data-i18n]").forEach(function(el){ var v = tx(el.getAttribute("data-i18n")); if(v != null) el.innerHTML = v; });
-    document.querySelectorAll("[data-i18n-html]").forEach(function(el){ var v = tx(el.getAttribute("data-i18n-html")); if(v != null) el.innerHTML = v; });
     document.documentElement.setAttribute("lang", cur);
-    var meta = LANGS.filter(function(l){ return l[0] === cur; })[0];
-    document.getElementById("langFlag").textContent = meta[1];
-    document.getElementById("langCode").textContent = meta[0].toUpperCase();
+    document.getElementById("langCode").textContent = cur.toUpperCase();
     langPanel.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-current", b.getAttribute("data-code") === cur ? "true" : "false"); });
-    document.getElementById("lbClose").setAttribute("aria-label", tx("lbClose"));
-    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){ el.setAttribute("aria-label", tx(el.getAttribute("data-i18n-aria"))); });
-    renderStatus();
+    try{ localStorage.setItem("cb_lang", cur); }catch(e){}
   }
-
-  /* ---- Live-Öffnungsstatus (Zeit in Wien) ---- */
-  function viennaNow(){
-    var p = {};
-    try{
-      new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Vienna",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false})
-        .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
-      return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute);
-    }catch(e){ var n = new Date(); return Date.UTC(n.getFullYear(), n.getMonth(), n.getDate(), n.getHours(), n.getMinutes()); }
-  }
-  function sessionsFor(dayMs){
-    var dt = new Date(dayMs), wd = dt.getUTCDay(), dom = dt.getUTCDate(), H = 3600000;
-    if(wd === 4 && dom <= 7) return {s:dayMs + 19*H, e:dayMs + 25*H, open:"19:00", close:"1:00", wd:4};
-    if(wd === 5) return {s:dayMs + 19*H, e:dayMs + 25*H, open:"19:00", close:"1:00", wd:5};
-    if(wd === 6) return {s:dayMs + 20*H, e:dayMs + 27*H, open:"20:00", close:"3:00", wd:6};
-    return null;
-  }
-  function computeStatus(){
-    var now = viennaNow(), D = 86400000, today = now - now % D;
-    for(var i = -1; i < 40; i++){
-      var s = sessionsFor(today + i*D); if(!s) continue;
-      if(now >= s.s && now < s.e) return {open:true, s:s};
-      if(now < s.s) return {open:false, s:s, inDays:i};
-    }
-    return null;
-  }
-  function fill(str, o){ return String(str).replace("{t}", o.t || "").replace("{d}", o.d || ""); }
-  function rel(ms, unitDays){
-    try{
-      var rtf = new Intl.RelativeTimeFormat(LOCALE[cur] || "de-AT", {numeric:"auto"});
-      if(unitDays != null) return rtf.format(unitDays, "day");
-      var m = Math.round(ms / 60000);
-      return m < 90 ? rtf.format(Math.max(1, m), "minute") : rtf.format(Math.round(m / 60), "hour");
-    }catch(e){ return ""; }
-  }
-  function longDate(s){
-    try{ return new Intl.DateTimeFormat(LOCALE[cur] || "de-AT",{weekday:"long",day:"numeric",month:"long",timeZone:"UTC"}).format(new Date(s.s)); }catch(e){ return ""; }
-  }
-  function shortDate(s){
-    try{ return new Intl.DateTimeFormat(LOCALE[cur] || "de-AT",{day:"numeric",month:"short",timeZone:"UTC"}).format(new Date(s.s)); }catch(e){ return tx("tagNext"); }
-  }
-  function renderStatus(){
-    var st = computeStatus(); if(!st) return;
-    var now = viennaNow(), word, when, r = "", tag;
-    if(st.open){
-      word = tx("stOpen"); when = fill(tx("stUntil"), {t:st.s.close}); tag = tx("tagNow");
-    } else if(st.inDays === 0){
-      word = tx("stTonight"); when = fill(tx("stFrom"), {t:st.s.open}); r = rel(st.s.s - now); tag = tx("tagToday");
-    } else {
-      word = tx("stNext"); when = longDate(st.s) + " · " + fill(tx("stFrom"), {t:st.s.open}); r = rel(0, st.inDays); tag = shortDate(st.s);
-    }
-    var sign = document.getElementById("sign");
-    sign.classList.toggle("lit", st.open || st.inDays === 0);
-    sign.classList.toggle("dim", !(st.open || st.inDays === 0));
-    document.getElementById("signWord").textContent = word;
-    document.getElementById("signWhen").textContent = when;
-    document.getElementById("signRel").textContent = r;
-    var order = {4:0,5:1,6:2};
-    document.querySelectorAll(".hours-list li").forEach(function(li, i){ li.classList.toggle("hot", order[st.s.wd] === i); });
-    document.querySelectorAll("[data-time]").forEach(function(el){ el.textContent = fill(tx("clock"), {t:el.getAttribute("data-time")}); });
-    document.querySelectorAll(".board [data-col]").forEach(function(c){
-      var hot = +c.getAttribute("data-col") === st.s.wd;
-      c.classList.toggle("hot", hot);
-      var t = c.querySelector(".tag"); if(t) t.textContent = hot ? tag : "";
-    });
-    return st;
-  }
-
-  /* ---- FAQ-Videos: Vorschaubild erst beim Aufklappen, Player erst beim Klick ---- */
-  document.querySelectorAll(".faq details[data-yt]").forEach(function(d){
-    var id = d.getAttribute("data-yt"), img = d.querySelector(".yt-btn img");
-    d.addEventListener("toggle", function(){ if(d.open && !img.getAttribute("src")) img.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; });
-    d.querySelector(".yt-btn").addEventListener("click", function(){
-      var f = document.createElement("iframe");
-      f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
-      f.title = d.querySelector("summary span").textContent;
-      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true;
-      this.replaceWith(f);
-    });
-  });
-
-  /* ---- copy ---- */
-  document.querySelectorAll(".copy-btn[data-copy]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      function done(){ btn.textContent = tx("copied"); setTimeout(function(){ btn.textContent = tx("copy"); }, 1400); }
-      var t = btn.getAttribute("data-copy");
-      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, done); } else { done(); }
-    });
-  });
-
-  /* ---- mobile bar + scroll progress ---- */
-  var hero = document.querySelector(".hero"), header = document.querySelector("header.top"), bar = document.querySelector(".mobile-bar"), prog = document.getElementById("prog"), ticking = false;
-  function onScroll(){
-    ticking = false;
-    bar.classList.toggle("show", hero.getBoundingClientRect().bottom <= 0);
-    header.classList.toggle("solid", scrollY > 40);
-    var h = document.documentElement.scrollHeight - innerHeight;
-    prog.style.setProperty("--p", h > 0 ? Math.min(1, scrollY / h).toFixed(4) : 0);
-  }
-  window.addEventListener("scroll", function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
-  window.addEventListener("resize", onScroll);
-  onScroll();
-
-  /* ---- scroll-to-load: Bilder erst laden, wenn sie in die Nähe kommen ---- */
-  function loadImg(box){
-    var img = box.querySelector("img[data-src]"); if(!img) return;
-    img.addEventListener("load", function(){ box.classList.add("done"); }, {once:true});
-    img.addEventListener("error", function(){ box.classList.add("done"); }, {once:true});
-    if(img.dataset.srcset) img.srcset = img.dataset.srcset;
-    img.src = img.dataset.src; img.removeAttribute("data-src");
-  }
-  var lazies = document.querySelectorAll(".lz");
-  if("IntersectionObserver" in window){
-    var lio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ loadImg(en.target); lio.unobserve(en.target); } });
-    }, {rootMargin:"300px 300px"});
-    lazies.forEach(function(el){ lio.observe(el); });
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
-    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
-  } else {
-    lazies.forEach(loadImg);
-    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
-  }
-
-  /* ---- lightbox ---- */
-  var rooms = Array.prototype.slice.call(document.querySelectorAll(".room"));
-  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbIdx = 0;
-  function showLb(){
-    var r = rooms[lbIdx], name = r.querySelector("b").textContent;
-    lbImg.src = r.getAttribute("data-full"); lbImg.alt = name;
-    document.getElementById("lbTitle").textContent = name;
-    document.getElementById("lbCount").textContent = (lbIdx + 1) + " / " + rooms.length;
-  }
-  function openLb(i){ lbIdx = i; showLb(); lb.classList.add("open"); document.body.style.overflow = "hidden"; document.getElementById("lbClose").focus(); }
-  function closeLb(){ lb.classList.remove("open"); document.body.style.overflow = ""; }
-  function step(n){ lbIdx = (lbIdx + n + rooms.length) % rooms.length; showLb(); }
-  rooms.forEach(function(r, i){ r.addEventListener("click", function(){ openLb(i); }); });
-  document.getElementById("lbClose").addEventListener("click", closeLb);
-  document.getElementById("lbPrev").addEventListener("click", function(){ step(-1); });
-  document.getElementById("lbNext").addEventListener("click", function(){ step(1); });
-  lb.addEventListener("click", function(e){ if(e.target === lb) closeLb(); });
-  var sx = null;
-  lb.addEventListener("touchstart", function(e){ sx = e.touches[0].clientX; }, {passive:true});
-  lb.addEventListener("touchend", function(e){ if(sx === null) return; var dx = e.changedTouches[0].clientX - sx; if(Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); sx = null; });
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape"){ closePanel(); closeLb(); }
-    if(lb.classList.contains("open")){ if(e.key === "ArrowRight") step(1); if(e.key === "ArrowLeft") step(-1); }
-  });
-
-  /* ---- init ---- */
-  apply("de");
-  setInterval(renderStatus, 60000);
+  var initial = "de";
+  try{ var s = localStorage.getItem("cb_lang"); if(s && T[s]) initial = s; }catch(e){}
+  if(initial === "de"){ var nav = (navigator.language || "de").slice(0,2); if(T[nav]) initial = nav; }
+  apply(initial);
 });
 </script>
 </body>
