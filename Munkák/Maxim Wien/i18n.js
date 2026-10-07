@@ -3,7 +3,7 @@ var I18N = window.I18N = {};
 
 I18N.en = {
   navEscort:"Escort", navGirls:"Girls", navClub:"Club", navRooms:"Rooms &amp; prices", navPrices:"Prices", navChamp:"Champagne", navLegacy:"Legacy Bar",
-  heroSub:"Nightclub · Girls · <b>Escort 24/7 to your hotel</b> · opposite the State Opera.",
+  heroSub:"Nightclub · Girls · <b>Escort 24/7 to your&nbsp;hotel</b><br>Vienna&nbsp;1 · opposite the State Opera",
   ctaSave:"Save contact", ctaCall:"Call", ctaRoute:"Get directions",
   stOpen:"Club open now · until 5:00 am", stClosed:"Club opens at 8:00 pm · escort around the clock",
   escTitle:"Escort<span>We come to your hotel.</span>",
@@ -46,7 +46,7 @@ I18N.en = {
 
 I18N.hu = {
   navEscort:"Escort", navGirls:"Lányok", navClub:"Klub", navRooms:"Szobák és árak", navPrices:"Árak", navChamp:"Pezsgő", navLegacy:"Legacy Bar",
-  heroSub:"Nightclub · Lányok · <b>Escort 0–24 a szállodádba</b> · a Staatsoperrel szemben.",
+  heroSub:"Nightclub · Lányok · <b>Escort 0–24 a&nbsp;szállodádba</b><br>Bécs&nbsp;1. · a Staatsoperrel szemben",
   ctaSave:"Névjegy mentése", ctaCall:"Hívás", ctaRoute:"Útvonal",
   stOpen:"A klub most nyitva · hajnali 5-ig", stClosed:"A klub 20:00-tól nyitva · escort éjjel-nappal",
   escTitle:"Escort<span>Megyünk a szállodádba.</span>",

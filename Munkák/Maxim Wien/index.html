@@ -231,6 +231,43 @@
   .reveal.in{opacity:1;transform:none}
   html:not(.js) .reveal{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  /* ===== Handy (bis 759px): Foto oben, Text darunter; größere Schrift; Wischgalerien ===== */
+  @media(max-width:759px){
+    .hero{display:block;min-height:0;padding:0 0 22px}
+    .slides{position:relative;height:min(52svh,470px)}
+    .slides img:nth-child(1){object-position:20% 28%}
+    .slides img:nth-child(2){object-position:55% 50%}
+    .slides img:nth-child(3){object-position:35% 50%}
+    .slides::after{background:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 60%,var(--bg) 100%)}
+    .hero h1{font-size:clamp(84px,24vw,140px);margin-top:-.6em;position:relative}
+    .hero-sub{font-size:19px;margin-top:14px}
+    .status{font-size:15px}
+    #escort{padding-top:56px}
+    .tags li{font-size:14.5px}
+    .fav{font-size:14px}
+    .girl h3{font-size:21px}
+    .girl.nophoto{grid-template-columns:1fr;gap:6px;padding:16px 0}
+    .girl.nophoto h3{grid-row:auto}
+    .girl.nophoto + .girl.nophoto{margin-top:-22px}
+    .club-photo{margin-inline:0}
+    .rooms{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--pad)*-1);padding:0 var(--pad)}
+    .rooms::-webkit-scrollbar{display:none}
+    .rooms .photo{flex:0 0 86%;aspect-ratio:3/2;scroll-snap-align:center}
+  }
+  @media(max-width:380px){
+    .slides{height:44svh}
+    .hero-sub{font-size:16.5px}
+    .status{font-size:13.5px}
+    .hero-cta{margin-top:16px}
+  }
+  /* Champagner-Kategorien zum Aufklappen */
+  .champ details summary{list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;border-bottom:1px solid var(--line);padding-bottom:12px}
+  .champ details summary::-webkit-details-marker{display:none}
+  .champ details summary h3{border:0;padding:0}
+  .champ details summary svg{width:18px;height:18px;color:var(--gold);transition:transform .3s var(--ease)}
+  .champ details[open] summary svg{transform:rotate(45deg)}
+  @media(max-width:759px){.champ{gap:18px}}
+
 </style>
 </head>
 <body>
@@ -267,7 +304,7 @@
     </div>
     <div class="wrap hero-body">
       <h1>Maxim</h1>
-      <p class="hero-sub" data-i18n-html="heroSub">Nightclub · Girls · <b>Escort 24/7 ins Hotel</b> · gegenüber der Staatsoper.</p>
+      <p class="hero-sub" data-i18n-html="heroSub">Nightclub · Girls · <b>Escort 24/7 ins&nbsp;Hotel</b><br>Wien&nbsp;1 · gegenüber der Staatsoper</p>
       <p class="status" id="status"><i></i><span id="statusText">Club täglich 20:00 – 05:00 Uhr</span></p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="maxim.vcf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span data-i18n="ctaSave">Kontakt speichern</span></a>
@@ -413,7 +450,7 @@
         <p class="lead reveal" data-i18n="champLead">Jede Lady hat ihren Lieblings-Champagner – überrasch sie damit. Dazu Bier, Wein und Spirituosen von Kuba bis Japan. Preise auf der Karte im Club.</p>
       </div>
       <div class="champ">
-        <div class="reveal"><h3 data-i18n="cPrestige">Prestige</h3><ul>
+        <details class="reveal cat" open><summary><h3 data-i18n="cPrestige">Prestige</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
           <li><b>Armand de Brignac Gold</b><span><span data-i18n="cFav">Liebling von</span> Dyana</span></li>
           <li><b>Armand de Brignac Rosé</b><span><span data-i18n="cFav">Liebling von</span> Lady M</span></li>
           <li><b>Louis Roederer Cristal</b></li>
@@ -423,27 +460,27 @@
           <li><b>Krug Grande Cuvée</b></li>
           <li><b>Veuve Clicquot La Grande Dame</b><span><span data-i18n="cFav">Liebling von</span> Maria</span></li>
           <li><b>Rare Brut Vintage</b></li>
-        </ul></div>
-        <div class="reveal"><h3 data-i18n="cRose">Rosé</h3><ul>
+        </ul></details>
+        <details class="reveal cat"><summary><h3 data-i18n="cRose">Rosé</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
           <li><b>Krug Rosé</b><span><span data-i18n="cFav">Liebling von</span> Lory, Carla</span></li>
           <li><b>Louis Roederer Rosé Vintage</b><span><span data-i18n="cFav">Liebling von</span> Zavana</span></li>
           <li><b>Moët Rosé Impérial</b></li>
           <li><b>Moët Nectar Impérial Rosé</b><span><span data-i18n="cFav">Liebling von</span> Sophia, Bella</span></li>
           <li><b>Pierre Morlet Rosé</b></li>
-        </ul></div>
-        <div class="reveal"><h3 data-i18n="cBrut">Brut</h3><ul>
+        </ul></details>
+        <details class="reveal cat"><summary><h3 data-i18n="cBrut">Brut</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
           <li><b>Moët Impérial</b></li>
           <li><b>Louis Roederer Brut Premier</b></li>
-        </ul></div>
-        <div class="reveal"><h3 data-i18n="cSweet">Demi-Sec &amp; süß</h3><ul>
+        </ul></details>
+        <details class="reveal cat"><summary><h3 data-i18n="cSweet">Demi-Sec &amp; süß</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
           <li><b>Piper-Heidsieck Demi-Sec Riviera</b><span><span data-i18n="cFav">Liebling von</span> Lena, Anca</span></li>
           <li><b>Moët Nectar Impérial</b></li>
           <li><b>Veuve Clicquot Rich</b><span><span data-i18n="cFav">Liebling von</span> Vivien</span></li>
-        </ul></div>
-        <div class="reveal"><h3 data-i18n="cIce">Ice – auf Eis</h3><ul>
+        </ul></details>
+        <details class="reveal cat"><summary><h3 data-i18n="cIce">Ice – auf Eis</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
           <li><b>Moët Ice Impérial</b><span><span data-i18n="cFav">Liebling von</span> Flora, Ariana</span></li>
           <li><b>Moët Ice Impérial Rosé</b><span><span data-i18n="cFav">Liebling von</span> Kendra</span></li>
-        </ul></div>
+        </ul></details>
       </div>
     </div>
   </section>
@@ -581,6 +618,9 @@ document.addEventListener("DOMContentLoaded", function(){
       slides[si].classList.remove("on"); si = (si + 1) % slides.length; slides[si].classList.add("on");
     }, 5200);
   }
+
+  /* ---- Champagner: auf großen Bildschirmen alle Kategorien offen ---- */
+  if(innerWidth >= 760) document.querySelectorAll(".champ details").forEach(function(d){ d.open = true; });
 
   /* ---- Girls filtern ---- */
   var girls = document.querySelectorAll("#roster .girl"), fbtns = document.querySelectorAll(".filters button");
