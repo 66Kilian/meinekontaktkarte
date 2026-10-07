@@ -314,7 +314,18 @@
   });
 
   // ------------------------------------------------------------ Panel: Abschnitte | Bilder | Design
+  // Was der Kunde bearbeiten darf, legt der Betreiber je Seite fest (Einstellungen → Funktionen)
+  function allowedTab(t) {
+    var f = (S.info && S.info.features) || {};
+    if (t === "sections" && f.sections === false) return false;
+    if (t === "design" && f.design === false) return false;
+    return true;
+  }
   function setPanelTab(t) {
+    var f = (S.info && S.info.features) || {};
+    $("ptabs").querySelector('[data-p="sections"]').classList.toggle("hidden", f.sections === false);
+    $("ptabs").querySelector('[data-p="design"]').classList.toggle("hidden", f.design === false);
+    if (!allowedTab(t)) t = "images";
     S.ptab = t;
     Array.prototype.forEach.call($("ptabs").children, function (b) { b.classList.toggle("on", b.dataset.p === t); b.setAttribute("aria-selected", b.dataset.p === t ? "true" : "false"); });
     $("pSections").classList.toggle("hidden", t !== "sections");

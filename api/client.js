@@ -6,7 +6,7 @@ import { verifyTotp, hashPassword, sha256, randomToken } from "./_lib/crypto.js"
 import { lockedFor, fail, success, consumeStep, slow } from "./_lib/limiter.js";
 import { signData, verifyData, CLIENT_COOKIE, SESSION_TTL, PRE_TTL } from "../lib/session.js";
 import { load, update, clientSession, publicAccount, checkPassword, normUser, USERNAME_RE, login, DISABLED_MSG, touchLogin } from "./_lib/accounts.js";
-import { htmlPath, overridesPath, parseOverrides, renderOverrides, cleanOverrides, validUpload } from "./_lib/sites.js";
+import { htmlPath, overridesPath, parseOverrides, renderOverrides, cleanOverrides, validUpload, featureOn } from "./_lib/sites.js";
 import { checkClientHtml, checkOverrides } from "./_lib/sanitize.js";
 import { mirrorFiles } from "./_lib/mirror.js";
 import { brandFor } from "./_lib/brand.js";
@@ -50,6 +50,7 @@ const actions = {
     const mine = sess && sess.site.id === site.id ? sess : null;
     send(res, 200, {
       site: { id: site.id, name: site.name, slug: site.slug },
+      features: { sections: featureOn(site, "clientSections"), design: featureOn(site, "clientDesign") },
       brand: brandFor(site, await siteHtml(ctx, site)),
       help: HELP_WHATSAPP,
       translate: Boolean(process.env.DEEPL_API_KEY),
@@ -215,8 +216,9 @@ const actions = {
     if (typeof b.html === "string") {
       if (b.html.length > MAX_HTML || !/<html[\s>]/i.test(b.html)) return send(res, 400, { error: "Seite ungültig" });
       const oldHtml = (await st.readBlob(tree.get(hp))).toString("utf8");
-      // Farbdesign immer aus der eigenen Liste setzen – nie fremdes CSS übernehmen
-      b.html = applyTheme(b.html, themeOf(b.html));
+      // Farbdesign immer aus der eigenen Liste setzen – nie fremdes CSS übernehmen;
+      // ist die Design-Auswahl für diese Seite aus, bleibt das bisherige Design.
+      b.html = applyTheme(b.html, themeOf(featureOn(site, "clientDesign") ? b.html : oldHtml));
       const bad = checkClientHtml(applyTheme(oldHtml, "standard"), applyTheme(b.html, "standard"));
       if (bad) return send(res, 400, { error: bad });
       expect[hp] = b.htmlSha || null;

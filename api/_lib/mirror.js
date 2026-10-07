@@ -11,7 +11,7 @@ function toRepoPath(site, path) {
 
 /** Spiegelt geänderte Dateien. Fehler brechen das Speichern nie ab – sie werden gemeldet. */
 export async function mirrorFiles(site, files, message) {
-  if (!site || !site.folder || !REPO_RE.test(site.repo || "")) return null;
+  if (!site || !site.folder || !REPO_RE.test(site.repo || "") || (site.features && site.features.repo === false)) return null;
   if (process.env.MK_LOCAL_REPO || !process.env.GITHUB_TOKEN) return { skipped: true };
   const mapped = files.map(f => ({ path: toRepoPath(site, f.path), content: f.content })).filter(f => f.path);
   if (!mapped.length) return null;
@@ -32,6 +32,7 @@ export async function mirrorFiles(site, files, message) {
 /** Überträgt den kompletten Seitenordner (z. B. nach dem Anlegen eines Repos). */
 export async function mirrorAll(site, st, tree) {
   if (!REPO_RE.test(site.repo || "")) throw new Error("Kein gültiges Repo eingetragen (Format: besitzer/repo)");
+  if (site.features && site.features.repo === false) throw new Error("Das eigene Repo ist für diese Seite ausgeschaltet (Einstellungen → Funktionen).");
   const files = [];
   for (const [path, sha] of tree) {
     if (path.startsWith(site.folder + "/")) files.push({ path, content: await st.readBlob(sha) });

@@ -34,6 +34,9 @@
     if (o.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(o.email) && miss.indexOf("email") < 0) miss.push("email");
     return miss;
   }
+  // Funktionen je Seite (wie api/_lib/sites.js FEATURE_KEYS) – fehlt ein Schlüssel, ist sie an
+  function featOn(s, k) { return !(s && s.features && s.features[k] === false); }
+  function impNeeded(s) { return featOn(s, "impressum") && impMissing(s.impressum).length > 0; }
   function impUrl(s) { return "https://" + ROOT_DOMAIN + "/" + (s.folder ? s.slug + "/" : "") + "impressum/"; }
   var E = window.MKEdit; // gemeinsamer Editor-Kern (mk-edit.js)
   var DRAFT_KEY = "mk-admin-draft";
@@ -159,6 +162,8 @@
       var want = (location.hash.match(/site=([\w-]+)/) || [])[1];
       var first = S.config.sites.find(function (s) { return s.id === want; }) || S.config.sites[0];
       if (first) openSite(first.id);
+      // Handy: immer mit der Seitenliste starten
+      if (isMobile()) document.body.classList.remove("m-site");
     }).catch(function (e) { toast(e.message, true); });
   }
 
@@ -240,7 +245,7 @@
           h("span", { class: "dot " + (s.enabled ? "ok" : "off"), title: s.enabled ? "Online" : "Kikapcsolva" }),
           h("span", { class: "t" }, h("b", { text: s.name }), h("small", { text: s.folder ? "/" + s.slug + (s.subdomain ? " · " + s.subdomain + "." : "") : "Főoldal" })),
           n ? h("span", { class: "badge", title: n + " ügyfél-admin" }, svgUser(), String(n)) : null,
-          impMissing(s.impressum).length ? h("span", { class: "pill warn imp-flag", title: t("Hiányzik az impresszum") }, "§") : null,
+          impNeeded(s) ? h("span", { class: "pill warn imp-flag", title: t("Hiányzik az impresszum") }, "§") : null,
           siteChanged(s) ? h("span", { class: "chg", title: "Nem közzétett változás" }) : null);
         it.addEventListener("dragstart", function (e) { S.dragSite = s.id; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", s.id); });
         it.addEventListener("dragend", function () { S.dragSite = null; clearGrpDrop(); });
@@ -324,6 +329,7 @@
   // ------------------------------------------------------------ Seite öffnen
   function openSite(id, force) {
     if (S.clientsView) closeClients();
+    if (!force && (S.cur !== id || !document.body.classList.contains("m-site"))) { document.body.classList.add("m-site"); if (isMobile()) scrollTo(0, 0); }
     if (S.cur !== id) S.sel = null;
     S.cur = id;
     history.replaceState(null, "", "#site=" + id);
@@ -359,7 +365,15 @@
     } else u.append(h("span", { class: "muted", text: "Még nincs közzétéve" }));
   }
 
+  function isMobile() { return window.matchMedia && matchMedia("(max-width:720px)").matches; }
+  $("mBack").onclick = function () { document.body.classList.remove("m-site", "m-prev"); scrollTo(0, 0); };
   function setTab(t) {
+    if (t === "preview") {
+      document.body.classList.add("m-prev");
+      Array.prototype.forEach.call($("tabs").children, function (b) { b.classList.toggle("on", b.dataset.tab === "preview"); });
+      return;
+    }
+    document.body.classList.remove("m-prev");
     S.tab = t;
     Array.prototype.forEach.call($("tabs").children, function (b) { b.classList.toggle("on", b.dataset.tab === t); });
     renderTab();
@@ -742,7 +756,7 @@
     // --- Állapot
     var en = h("input", { type: "checkbox" }); en.checked = !!s.enabled; en.disabled = isMain;
     en.addEventListener("change", function () {
-      if (en.checked && !(b && b.enabled) && impMissing(s.impressum).length) {
+      if (en.checked && !(b && b.enabled) && impNeeded(s)) {
         en.checked = false; toast(t("Előbb töltsd ki az impresszumot – enélkül az oldal nem kapcsolható be."), true);
         var ic = box.querySelector(".imp-card"); if (ic) ic.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
@@ -766,7 +780,8 @@
     basic.body.append(field("Csoport", sel, "Csoportot a bal oldali listában is válthatsz: húzd a munkát a csoport fölé."));
     box.append(basic);
 
-    box.append(renderImpressum(s, b));
+    box.append(renderFeatures(s));
+    if (featOn(s, "impressum")) box.append(renderImpressum(s, b));
 
     if (!isMain) {
       // --- Cím
@@ -797,9 +812,10 @@
       box.append(renderClientAdmins(s, b));
 
       // --- Arculat
-      box.append(renderBrand(s));
+      if (featOn(s, "brand")) box.append(renderBrand(s));
 
       // --- GitHub
+      if (featOn(s, "repo")) {
       var gh = card("Saját GitHub-repó", "Minden mentés (a tiéd és az ügyfélé is) ide is bekerül: a weboldal mappájának tartalma.");
       var ri = h("input", { class: "inp", value: s.repo || "", placeholder: "66Kilian/LoveKinoADMIN", spellcheck: "false", autocapitalize: "off" });
       ri.addEventListener("input", function () { s.repo = ri.value.trim().replace(/^https:\/\/github\.com\//, "").replace(/\.git$/, ""); changed(); });
@@ -812,6 +828,7 @@
             .catch(function (err) { toast(err.message, true); }).finally(function () { btn.disabled = false; });
         } })));
       box.append(gh);
+      }
     }
 
     // --- Jegyzet
@@ -1048,6 +1065,31 @@
       h("input", { class: "inp", value: link, readonly: true }),
       h("div", { class: "row-l", style: "margin-top:10px" }, copyBtn(link),
         h("a", { class: "btn sm", href: "https://wa.me/?text=" + encodeURIComponent(msg), target: "_blank", rel: "noopener", text: "Küldés WhatsAppon" }))), null);
+  }
+
+  // ------------------------------------------------------------ Funktionen je Seite
+  var FEATURES = [
+    ["impressum", "Impresszum", "Saját „Impressum” oldal (…/impressum/), kötelező adatokkal. Kikapcsolva nincs ilyen oldal, és nem kell kitölteni."],
+    ["repo", "Saját GitHub-repó", "Minden mentés a weboldal saját repójába is bekerül."],
+    ["brand", "Ügyfél-admin arculata", "Az ügyfél-admin színeit, logóját itt felülírhatod."],
+    ["clientSections", "Ügyfél: szekciók", "Az ügyfél átrendezheti, elrejtheti a szekciókat."],
+    ["clientDesign", "Ügyfél: design-választó", "Az ügyfél másik színdesignt választhat."]
+  ];
+  function renderFeatures(s) {
+    var c = card("Funkciók ennél az oldalnál", "Csak az jelenjen meg, amire ennek az ügyfélnek szüksége van. Kikapcsolva a hozzá tartozó beállítások is eltűnnek.");
+    var list = h("div", { class: "feat-list" });
+    FEATURES.forEach(function (f) {
+      if (!s.folder && f[0] !== "impressum") return; // Startseite: nur Impressum
+      var i = h("input", { type: "checkbox" }); i.checked = featOn(s, f[0]);
+      i.addEventListener("change", function () {
+        s.features = s.features || {};
+        if (i.checked) delete s.features[f[0]]; else s.features[f[0]] = false;
+        changed(); renderSettings(); renderSide();
+      });
+      list.append(h("label", { class: "feat" }, h("span", { class: "feat-t" }, h("b", { text: f[1] }), h("small", { text: f[2] })), h("span", { class: "switch" }, i, h("span", { class: "tr" }))));
+    });
+    c.body.append(list);
+    return c;
   }
 
   // ------------------------------------------------------------ Impressum

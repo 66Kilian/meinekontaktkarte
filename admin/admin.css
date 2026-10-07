@@ -278,3 +278,49 @@ div.f{margin:0 0 14px}
 #btnClients.on{background:var(--ink);color:var(--panel)}
 @media(max-width:1100px){.clients-view{left:0}}
 .scard:has(.more-menu[open]){overflow:visible}
+
+/* Funktionen je Seite */
+.feat-list{display:grid;gap:2px}
+.feat{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.feat:last-child{border-bottom:0}
+.feat-t{display:grid;gap:2px;min-width:0}
+.feat-t b{font-size:13.5px}
+.feat-t small{font-size:12px;color:var(--ink-3)}
+
+/* Handy: Seitenliste → Seite → Vorschau als eigene Ansichten */
+.m-back,.m-only{display:none}
+@media (max-width:720px){
+  .app{display:block;height:auto;min-height:100svh}
+  .top{position:sticky;top:0;z-index:30;height:52px}
+  .top .deploy{display:none}
+  .body{display:block;overflow:visible}
+  body:not(.m-site) .editor,body:not(.m-site) .prev{display:none}
+  body.m-site .side{display:none}
+  body.m-site:not(.m-prev) .prev{display:none}
+  body.m-prev .ed-body{display:none}
+  .side{border:0}
+  .side .search{padding:14px 14px 6px}
+  .site-item{padding:12px 10px}
+  .site-item .t b{font-size:15px}
+  .grp-head .btn{opacity:1}
+  .editor{border:0}
+  .ed-head{position:sticky;top:52px;z-index:20;background:var(--panel);padding:10px 14px 0}
+  .m-back{display:inline-flex;align-items:center;gap:4px;border:0;background:none;padding:6px 0 8px;font-weight:700;color:var(--accent);cursor:pointer;font-size:14px}
+  .m-only{display:block}
+  .tabs{overflow-x:auto;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{flex:none;padding:10px 12px}
+  .ed-body{overflow:visible;padding:14px 14px 110px}
+  .prev{min-height:calc(100svh - 150px)}
+  .prev-stage{padding:12px}
+  .frame-wrap.mobile{width:100%;max-width:393px}
+  .imp-grid{grid-template-columns:1fr}
+  .clients-view{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:40;padding:16px 14px 90px}
+  .cv-head{flex-direction:column;gap:10px}
+  .cv-tools{flex-direction:column;align-items:stretch}
+  .cv-tools .inp{max-width:none}
+  .acc{flex-wrap:wrap}
+  .acc-acts{width:100%;justify-content:flex-end}
+  .savebar{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:none}
+  #btnClients{padding:0 10px}
+}

@@ -38,7 +38,12 @@ export default {
       "clientAdmin": false,
       "repo": "66Kilian/CaribikADMIN",
       "brand": {},
-      "impressum": {}
+      "impressum": {},
+      "features": {
+        "impressum": false,
+        "clientSections": false,
+        "clientDesign": false
+      }
     },
     {
       "id": "venus",

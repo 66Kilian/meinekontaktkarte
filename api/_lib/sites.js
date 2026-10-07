@@ -77,6 +77,7 @@ export function validateConfig(next, prev, tree) {
       repo: cleanRepo(s.repo),
       brand: cleanBrand(s.brand),
       impressum: cleanImpressum(s.impressum),
+      features: cleanFeatures(s.features),
     });
   }
   if (!clean.some(s => s.folder === "")) throw "Die Startseite darf nicht entfernt werden";
@@ -91,6 +92,16 @@ function cleanRepo(r) {
   r = String(r || "").trim().replace(/^https:\/\/github\.com\//, "").replace(/\.git$/, "").replace(/\/+$/, "");
   return REPO_RE.test(r) ? r : "";
 }
+// Funktionen je Seite (Admin → Einstellungen → Funktionen). Fehlt ein Schlüssel, ist die Funktion an.
+export const FEATURE_KEYS = ["impressum", "repo", "brand", "clientSections", "clientDesign"];
+function cleanFeatures(f) {
+  const out = {};
+  if (!f || typeof f !== "object") return out;
+  for (const k of FEATURE_KEYS) if (f[k] === false) out[k] = false;
+  return out;
+}
+export const featureOn = (site, key) => !(site && site.features && site.features[key] === false);
+
 function cleanBrand(b) {
   const out = {};
   if (!b || typeof b !== "object") return out;
