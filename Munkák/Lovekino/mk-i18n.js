@@ -3,7 +3,8 @@
  "de": {
   "evLead": "Montag und Mittwoch gehören den Greedy-Events für Frauen, die den Männerüberschuss genießen. Am Donnerstag zahlen Paare den halben Preis und Damen gar nichts.",
   "evTitle": "Greedy Monday und Midweek &amp; Donnerstags-Knaller.",
-  "heroTitle": "Swingerbar \u003cspan>Lovekino.\u003c/span>"
+  "heroTitle": "Swingerbar \u003cspan>Lovekino.\u003c/span>",
+  "heroSub": "Swingertreff, Bar und zwei Kinos&nbsp;– Mitten in Meidling."
  },
  "en": {
   "evLead": "Mondays and Wednesdays are reserved for Greedy events for women who enjoy the surplus of men. On Thursdays, couples pay half price and ladies get in for free.",
