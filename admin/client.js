@@ -25,9 +25,15 @@
     var q = "/api/client?a=" + action + (action === "status" ? "&site=" + encodeURIComponent(SLUG) : "");
     var opts = { credentials: "same-origin", headers: { "x-mk-admin": "1" } };
     if (body !== undefined) { opts.method = "POST"; opts.headers["content-type"] = "application/json"; opts.body = JSON.stringify(body); }
-    return fetch(q, opts).then(function (r) {
+    // Schlechtes Netz: lieber nach 45 s eine klare Meldung als ewig warten
+    var ctl = window.AbortController ? new AbortController() : null, tm = null;
+    if (ctl) { opts.signal = ctl.signal; tm = setTimeout(function () { ctl.abort(); }, action === "save" ? 180000 : 45000); }
+    return fetch(q, opts).catch(function () {
+      throw new Error("Keine Verbindung zum Server. Bitte prüfe dein Internet und versuche es noch einmal.");
+    }).then(function (r) {
+      clearTimeout(tm);
       return r.json().catch(function () { return {}; }).then(function (j) {
-        if (!r.ok) { var e = new Error(j.error || ("Fehler " + r.status)); e.status = r.status; e.data = j; throw e; }
+        if (!r.ok) { var e = new Error(j.error || (r.status >= 500 ? "Der Server hat gerade nicht geantwortet. Bitte versuche es gleich noch einmal." : "Fehler " + r.status)); e.status = r.status; e.data = j; throw e; }
         return j;
       });
     });
@@ -114,8 +120,9 @@
   $("fLogin").addEventListener("submit", function (e) {
     e.preventDefault();
     var btn = e.target.querySelector("button"); btn.disabled = true; $("lgErr").textContent = "";
-    api("login", { site: SLUG, username: $("lgUser").value, password: $("lgPw").value }).then(function (j) {
-      $("lgPw").value = "";
+    var typed = $("lgPw").value;
+    api("login", { site: SLUG, username: $("lgUser").value, password: typed }).then(function (j) {
+      $("lgPw").value = ""; S.loginPw = typed; // nur für „Start-Passwort ändern“, bleibt im Speicher
       if (j.pre) { pre = j.pre; authForm("fCode"); $("lgCode").value = ""; $("codeErr").textContent = ""; $("lgCode").focus(); return; }
       refreshAndStart();
     }).catch(function (err) { $("lgErr").textContent = err.message; }).finally(function () { btn.disabled = false; });
@@ -131,7 +138,13 @@
   });
   $("lgCode").addEventListener("input", function () { if (this.value.replace(/\D/g, "").length === 6) $("fCode").requestSubmit(); });
   $("codeBack").onclick = function () { showLogin(); };
-  function refreshAndStart() { return api("status").then(function (j) { S.info = j; startApp(); }); }
+  function refreshAndStart() {
+    return api("status").then(function (j) {
+      S.info = j;
+      if (!(j.account && j.account.pwTemp)) S.loginPw = null;
+      startApp();
+    });
+  }
 
   // ------------------------------------------------------------ Einladung / Registrierung
   function startInvite(token) {
@@ -205,7 +218,7 @@
 
   // ------------------------------------------------------------ Editor starten
   function startApp() {
-    show("vApp"); bumpIdle(); renderMenu();
+    show("vApp"); bumpIdle(); renderMenu(); showTapHint();
     $("blocks").innerHTML = ""; $("blocks").append(h("li", null, h("div", { class: "spin" })));
     loadSource().then(offerDraft).catch(function (e) {
       if (e.status === 401) return showLogin("Bitte melde dich an.");
@@ -256,8 +269,7 @@
     var p = S.page; if (!p) return;
     var y = 0; try { y = frame.contentWindow.scrollY || 0; } catch (e) {}
     var html = E.previewHtml(p, S.base, S.pending);
-    frame.onload = function () { wireFrame(y); };
-    frame.srcdoc = html;
+    E.loadFrame(frame, html, function () { wireFrame(y); });
   }
   var hoverEl = null;
   function wireFrame(y) {
@@ -266,7 +278,7 @@
     st.textContent = ".mk-hover{outline:2px dashed " + S.info.brand.accent + "!important;outline-offset:2px!important;cursor:pointer!important}.mk-sel{outline:3px solid " + S.info.brand.accent + "!important;outline-offset:2px!important}" +
       "img.mk-show{opacity:1!important;visibility:visible!important;z-index:50!important;transform:none!important;filter:none!important}";
     d.head.appendChild(st);
-    if (y) setTimeout(function () { try { frame.contentWindow.scrollTo(0, y); } catch (e) {} }, 60);
+    if (y) E.restoreScroll(frame, y);
     d.addEventListener("mouseover", function (e) {
       var t = e.target.closest && e.target.closest("[data-mk]");
       if (hoverEl && hoverEl !== t) hoverEl.classList.remove("mk-hover");
@@ -283,7 +295,30 @@
     }, true);
     d.addEventListener("submit", function (e) { e.preventDefault(); }, true);
     markSel(); fitFrame();
+    if (!S.flashed) { S.flashed = true; flashEditable(d); }
   }
+  // Beim ersten Öffnen kurz alles markieren, was man antippen und ändern kann.
+  function flashEditable(d) {
+    var st = d.createElement("style");
+    st.textContent = ".mk-flash{outline:2px dashed " + S.info.brand.accent + "!important;outline-offset:3px!important;animation:mkFlash 2.6s ease both}" +
+      "@keyframes mkFlash{0%,70%{outline-color:" + S.info.brand.accent + "}100%{outline-color:transparent}}";
+    d.head.appendChild(st);
+    var els = d.querySelectorAll("main img,[data-i18n],[data-i18n-html]");
+    Array.prototype.forEach.call(els, function (x) { if (!x.closest(".ld,[role=dialog]")) x.classList.add("mk-flash"); });
+    setTimeout(function () { Array.prototype.forEach.call(els, function (x) { x.classList.remove("mk-flash"); }); st.remove(); }, 2700);
+  }
+
+  // ------------------------------------------------------------ Hinweis „Tippe auf …“
+  var HINT_KEY = "mk-client-taphint";
+  function showTapHint() {
+    var seen = false; try { seen = localStorage.getItem(HINT_KEY) === "1"; } catch (e) {}
+    $("tapHint").classList.toggle("hidden", seen);
+  }
+  function hideTapHint() {
+    $("tapHint").classList.add("hidden");
+    try { localStorage.setItem(HINT_KEY, "1"); } catch (e) {}
+  }
+  $("tapHintX").onclick = hideTapHint;
   function markSel() {
     var d = fdoc(); if (!d) return;
     Array.prototype.forEach.call(d.querySelectorAll(".mk-sel,.mk-show"), function (x) { x.classList.remove("mk-sel", "mk-show"); });
@@ -292,6 +327,21 @@
   function select(el) {
     S.sel = el; renderInspector(); markSel(); openPanel(true);
     $("panel").scrollTop = 0;
+    hideTapHint();
+    if (narrow()) setTimeout(function () { revealAbovePanel(el); }, 30);
+  }
+  function narrow() { return innerWidth <= 860; }
+  // Handy: das Bearbeiten-Blatt deckt die untere Hälfte ab – Element darüber zeigen,
+  // damit man beim Tippen sieht, wie sich die Seite ändert.
+  function revealAbovePanel(el) {
+    var l = live(el), w = frame.contentWindow; if (!l || !w) return;
+    var r = l.getBoundingClientRect(), fr = frame.getBoundingClientRect();
+    var kb = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--kb")) || 0;
+    var visible = innerHeight - kb - $("panel").offsetHeight - fr.top; // sichtbare Höhe der Vorschau (Blatt ganz offen)
+    var top = r.top, room = Math.max(120, visible - 24);
+    if (top >= 12 && r.bottom <= room) return;
+    var target = w.scrollY + top - Math.max(12, (room - Math.min(r.height, room)) / 2);
+    w.scrollTo({ top: Math.max(0, target), behavior: "smooth" });
   }
   function scrollToLive(el) { var l = live(el); if (l) l.scrollIntoView({ behavior: "smooth", block: "start" }); }
 
@@ -325,8 +375,11 @@
     var f = (S.info && S.info.features) || {};
     $("ptabs").querySelector('[data-p="sections"]').classList.toggle("hidden", f.sections === false);
     $("ptabs").querySelector('[data-p="design"]').classList.toggle("hidden", f.design === false);
+    $("quick").querySelector('[data-q="sections"]').classList.toggle("hidden", f.sections === false);
+    $("quick").querySelector('[data-q="design"]').classList.toggle("hidden", f.design === false);
     if (!allowedTab(t)) t = "images";
     S.ptab = t;
+    $("panel").setAttribute("data-tab", t);
     Array.prototype.forEach.call($("ptabs").children, function (b) { b.classList.toggle("on", b.dataset.p === t); b.setAttribute("aria-selected", b.dataset.p === t ? "true" : "false"); });
     $("pSections").classList.toggle("hidden", t !== "sections");
     $("pImages").classList.toggle("hidden", t !== "images");
@@ -399,18 +452,38 @@
   function showImage(img) {
     select(img);
     var l = live(img);
-    if (l) l.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    if (l && !narrow()) l.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }
 
   // ------------------------------------------------------------ Bearbeiten-Blatt (Handy)
-  function openPanel(open) { $("panel").classList.toggle("open", open); }
-  $("btnSections").onclick = function () { S.sel = null; renderInspector(); markSel(); openPanel(!$("panel").classList.contains("open") || !!S.sel); };
+  function openPanel(open) {
+    $("panel").classList.toggle("open", open);
+    Array.prototype.forEach.call($("quick").children, function (b) { b.classList.toggle("on", open && !S.sel && b.dataset.q === S.ptab); });
+  }
+  // Handy: Abschnitte / Bilder / Design direkt aus der unteren Leiste
+  $("quick").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var t = b.dataset.q, isOpen = $("panel").classList.contains("open") && !S.sel && S.ptab === t;
+    S.sel = null; renderInspector(); markSel();
+    setPanelTab(t); openPanel(!isOpen); hideTapHint();
+    $("panel").scrollTop = 0;
+  });
   $("panelGrip").onclick = function () { openPanel(false); };
   (function () { // nach unten wischen schließt
     var y0 = null;
     $("panel").addEventListener("touchstart", function (e) { y0 = this.scrollTop <= 0 ? e.touches[0].clientY : null; }, { passive: true });
     $("panel").addEventListener("touchend", function (e) { if (y0 !== null && e.changedTouches[0].clientY - y0 > 80) openPanel(false); y0 = null; }, { passive: true });
   })();
+
+  if (window.visualViewport) {
+    var vv = window.visualViewport;
+    var kb = function () {
+      var k = Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop));
+      document.documentElement.style.setProperty("--kb", k + "px");
+      document.documentElement.classList.toggle("kb-open", k > 80);
+    };
+    vv.addEventListener("resize", kb); vv.addEventListener("scroll", kb);
+  }
 
   // ------------------------------------------------------------ Änderungen
   function dirty() { return !!S.page && E.pageDirty(S.page); }
@@ -491,6 +564,7 @@
     var box = $("insp"); box.innerHTML = "";
     var el = S.sel, p = S.page;
     $("sections").classList.toggle("hidden", !!(el && p && p.doc.contains(el)));
+    $("panel").classList.toggle("inspecting", !!(el && p && p.doc.contains(el)));
     if (!el || !p || !p.doc.contains(el)) { S.sel = null; return; }
     var key = el.getAttribute("data-i18n") || el.getAttribute("data-i18n-html");
     var kind = el.tagName === "IMG" ? "Bild" : el.tagName === "A" ? "Link / Button" : (key || E.isTexty(el)) ? "Text" : "Bereich";
@@ -682,8 +756,29 @@
     $("totpState").textContent = a.totp ? "Aktiv – beim Anmelden brauchst du zusätzlich den Code aus deiner App." : "Nicht aktiv. Wir empfehlen, sie einzuschalten.";
     $("totpToggle").textContent = a.totp ? "Ausschalten" : "Jetzt einrichten";
     $("totpToggle").className = "btn " + (a.totp ? "" : "primary");
+    var temp = !!a.pwTemp;
+    $("pwBanner").classList.toggle("hidden", !temp);
+    $("pwTempNote").classList.toggle("hidden", !temp);
+    $("setPw").classList.toggle("urgent", temp);
+    // Start-Passwort gerade eingegeben → nicht noch einmal abfragen
+    var knowOld = temp && !!S.loginPw;
+    $("pwOldRow").classList.toggle("hidden", knowOld);
+    $("pwOld").required = !knowOld;
+    $("pwUser").value = a.username;
+    $("pwBtn").textContent = temp ? "Eigenes Passwort speichern" : "Passwort speichern";
   }
-  $("btnMenu").onclick = function () { renderMenu(); $("dMenu").showModal(); };
+  function openMenu(focusPw) {
+    renderMenu(); $("dMenu").showModal();
+    if (focusPw) setTimeout(function () { $("setPw").scrollIntoView({ block: "start" }); ($("pwOldRow").classList.contains("hidden") ? $("pwNew") : $("pwOld")).focus(); }, 60);
+  }
+  $("btnMenu").onclick = function () { openMenu(false); };
+  $("pwBannerBtn").onclick = function () { openMenu(true); };
+  $("pwEye").onclick = function () {
+    var show = $("pwNew").type === "password";
+    $("pwNew").type = $("pwNew2").type = show ? "text" : "password";
+    this.textContent = show ? "Verbergen" : "Zeigen";
+    this.setAttribute("aria-label", show ? "Passwort verbergen" : "Passwort anzeigen");
+  };
   $("menuClose").onclick = function () { $("dMenu").close(); };
   $("dMenu").addEventListener("click", function (e) { if (e.target === this) this.close(); });
   $("totpToggle").onclick = function () {
@@ -700,15 +795,26 @@
   $("fPw").addEventListener("submit", function (e) {
     e.preventDefault();
     $("pwErr").textContent = "";
-    if ($("pwNew").value.length < 10) { $("pwErr").textContent = "Mindestens 10 Zeichen."; return; }
-    api("password", { old: $("pwOld").value, password: $("pwNew").value }).then(function () {
-      $("pwOld").value = $("pwNew").value = ""; toast("Passwort geändert ✓");
-    }).catch(function (err) { $("pwErr").textContent = err.message; });
+    if ($("pwNew").value.length < 10) { $("pwErr").textContent = "Das neue Passwort braucht mindestens 10 Zeichen."; return; }
+    if ($("pwNew").value !== $("pwNew2").value) { $("pwErr").textContent = "Die beiden neuen Passwörter stimmen nicht überein."; return; }
+    var old = $("pwOldRow").classList.contains("hidden") ? S.loginPw : $("pwOld").value;
+    var btn = $("pwBtn"); btn.disabled = true;
+    api("password", { old: old, password: $("pwNew").value }).then(function () {
+      $("pwOld").value = $("pwNew").value = $("pwNew2").value = "";
+      S.loginPw = null;
+      if (S.info.account) S.info.account.pwTemp = false;
+      renderMenu(); $("dMenu").close();
+      toast("Dein eigenes Passwort ist gespeichert ✓");
+    }).catch(function (err) {
+      if (err.status === 401 && $("pwOldRow").classList.contains("hidden")) { S.loginPw = null; renderMenu(); }
+      $("pwErr").textContent = err.message;
+    }).finally(function () { btn.disabled = false; });
   });
   $("btnLogout").onclick = function () { logout(); };
   function logout(msg) {
     saveDraft();
     if ($("dMenu").open) $("dMenu").close();
+    S.loginPw = null;
     api("logout", {}).catch(function () {}).then(function () { S.page = null; showLogin(msg); });
   }
 

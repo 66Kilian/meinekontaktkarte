@@ -224,6 +224,7 @@ dialog .row{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}
 .acc-t b{display:block;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acc-t small{color:var(--ink-3);font-size:12px}
 .ok-t{color:var(--ok);font-weight:700}
+.warn-t{color:#e0a100;font-weight:700}
 .acc-acts{display:flex;gap:6px;align-items:center}
 .more-menu{position:relative}
 .more-menu>summary{list-style:none}

@@ -21,6 +21,12 @@ const MAX_UPLOAD = 3 << 20;
 async function startSession(req, res, acc) {
   const tok = await signData(SECRET(), "c", { s: acc.site, a: acc.id, v: acc.ver }, SESSION_TTL);
   setSessionCookie(req, res, tok, SESSION_TTL, CLIENT_COOKIE);
+}
+
+// „Zuletzt angemeldet“ ist ein eigener GitHub-Commit (mehrere Sekunden) –
+// erst nach der Antwort schreiben, damit der Login nie darauf warten muss.
+async function answerThenTouch(res, body, acc) {
+  send(res, 200, body);
   await touchLogin(acc.id);
 }
 
@@ -94,6 +100,7 @@ const actions = {
           if (a.disabled) throw new UserError(DISABLED_MSG);
           a.pw = hashPassword(b.password);
           a.ver = (a.ver || 1) + 1;
+          delete a.pwTemp;
         } else {
           if (!name) throw new UserError("Bitte gib deinen Namen ein.");
           if (!USERNAME_RE.test(username)) throw new UserError("Benutzername: mind. 3 Zeichen, nur Kleinbuchstaben, Zahlen und . _ - @");
@@ -109,7 +116,7 @@ const actions = {
       throw e;
     }
     await startSession(req, res, acc);
-    send(res, 200, { ok: true, account: publicAccount(acc) });
+    await answerThenTouch(res, { ok: true, account: publicAccount(acc) }, acc);
   },
 
   async login(req, res) {
@@ -124,7 +131,7 @@ const actions = {
     if (acc.totp) return send(res, 200, { pre: await signData(SECRET(), "cp", { s: acc.site, a: acc.id, v: acc.ver }, PRE_TTL) });
     success(clientIp(req));
     await startSession(req, res, acc);
-    send(res, 200, { ok: true });
+    await answerThenTouch(res, { ok: true }, acc);
   },
 
   async verify(req, res) {
@@ -141,7 +148,7 @@ const actions = {
     if (step === null || !consumeStep(step, acc.id)) { fail(clientIp(req)); return send(res, 401, { error: "Code ungültig oder schon verwendet" }); }
     success(clientIp(req));
     await startSession(req, res, acc);
-    send(res, 200, { ok: true });
+    await answerThenTouch(res, { ok: true }, acc);
   },
 
   async logout(req, res) {
@@ -178,9 +185,11 @@ const actions = {
     if (!login(sess.acc, b.old)) return send(res, 401, { error: "Aktuelles Passwort falsch" });
     const pwErr = checkPassword(b.password);
     if (pwErr) return send(res, 400, { error: pwErr });
+    if (String(b.password) === String(b.old)) return send(res, 400, { error: "Bitte wähle ein neues Passwort (nicht das bisherige)." });
     const acc = await update(data => {
       const a = data.accounts.find(x => x.id === sess.acc.id);
       a.pw = hashPassword(b.password); a.ver = (a.ver || 1) + 1;
+      delete a.pwTemp;
       return a;
     }, "Passwort geändert");
     await startSession(req, res, acc); // alle anderen Sitzungen werden ungültig

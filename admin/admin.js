@@ -410,8 +410,7 @@
     try { if (keepScroll !== false) y = frame.contentWindow.scrollY || 0; } catch (e) {}
     var baseHref = site.folder ? "/" + encPath(site.folder) + "/" : "/";
     var html = E.previewHtml(p, baseHref, S.pendingImgs[S.cur]);
-    frame.onload = function () { wireFrame(y); };
-    frame.srcdoc = html;
+    E.loadFrame(frame, html, function () { wireFrame(y); });
     $("unpubFlag").classList.toggle("hidden", !pageDirty(p));
   }
 
@@ -430,7 +429,7 @@
     st.id = "mk-edit-style";
     st.textContent = ".mk-hover{outline:2px dashed #2f6bff!important;outline-offset:2px!important;cursor:pointer!important}.mk-sel{outline:3px solid #ff5a36!important;outline-offset:2px!important}";
     d.head.appendChild(st);
-    if (y) setTimeout(function () { try { frame.contentWindow.scrollTo(0, y); } catch (e) {} }, 60);
+    if (y) E.restoreScroll(frame, y);
     d.addEventListener("mouseover", function (e) {
       if (!S.editMode) return;
       var t = e.target.closest && e.target.closest("[data-mk]");
@@ -866,6 +865,7 @@
     function row(a) {
       var meta = h("small", null, "@" + a.username + " · ",
         h("span", { class: a.totp ? "ok-t" : "muted", text: a.totp ? "2FA ✓" : "2FA nincs" }),
+        a.pwTemp ? h("span", null, " · ", h("span", { class: "warn-t", title: t("Az ügyfél a saját beállításaiban cseréli le.") , text: "Start-jelszó (még nem cserélte)" })) : null,
         " · " + (a.lastLogin ? t("utoljára belépett: ") + fmtDate(a.lastLogin) : t("még nem lépett be")));
       return h("div", { class: "acc" + (a.disabled ? " disabled" : "") },
         h("span", { class: "avatar", text: initials(a.name) }),
@@ -903,7 +903,7 @@
       var pw = withPw ? h("input", { class: "inp mono", value: genPassword(), spellcheck: "false", autocomplete: "off" }) : null;
       var form = h("div", null, field("Név", name, "Így szólítja meg az admin, és ez látszik nálad a listában."), field("Felhasználónév", user, "Ezzel lép be. Kisbetű, szám, pont, kötőjel."),
         withPw ? h("label", { class: "f" }, h("span", null, "Jelszó"), h("div", { class: "row-l" }, pw, h("button", { class: "btn sm", type: "button", text: "Új", onclick: function () { pw.value = genPassword(); } })),
-          h("span", { class: "hint", text: "Legalább 10 karakter. Belépés után az ügyfél megváltoztathatja." })) : null,
+          h("span", { class: "hint", text: "Legalább 10 karakter. Ez egy start-jelszó: az ügyfél belépés után a saját beállításaiban lecseréli (az admin emlékezteti)." })) : null,
         h("p", { class: "err-text", "data-err": "acc" }));
       setTimeout(function () { (a ? user : name).focus(); }, 30);
       return { el: form, name: name, user: user, pw: pw, err: form.querySelector("[data-err]") };
@@ -1048,7 +1048,7 @@
   }
   function showCredentials(s, name, user, pw) {
     var url = clientAdminUrl(s);
-    var msg = "Hallo " + name + "! Dein Zugang zum Website-Admin von " + s.name + ":\n" + url + "\nBenutzername: " + user + "\nPasswort: " + pw + "\n\nBitte ändere das Passwort nach dem ersten Login (Einstellungen → Passwort ändern).";
+    var msg = "Hallo " + name + "! Dein Zugang zum Website-Admin von " + s.name + ":\n" + url + "\nBenutzername: " + user + "\nPasswort: " + pw + "\n\nNach dem ersten Login legst du in den Einstellungen (Zahnrad oben rechts) dein eigenes Passwort fest.";
     ask("Belépési adatok", h("div", null,
       h("p", { class: "muted", text: "Küldd el az ügyfélnek. A jelszót később már nem látod (csak újat adhatsz)." }),
       h("div", { class: "cred" },

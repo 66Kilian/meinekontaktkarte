@@ -112,6 +112,12 @@
     var base = c.createElement("base");
     base.setAttribute("href", baseHref);
     c.head.insertBefore(base, c.head.firstChild);
+    // Lade-Animationen (z. B. Lovekino) warten auf alle Bilder und verdecken die
+    // Vorschau sekundenlang – im Editor sofort aus.
+    c.documentElement.classList.add("ld-gone");
+    var noLd = c.createElement("style");
+    noLd.textContent = ".ld{display:none!important}";
+    c.head.appendChild(noLd);
     var ov = c.querySelector('script[src="mk-i18n.js"]');
     if (ov) ov.setAttribute("src", "data:text/javascript;charset=utf-8," + encodeURIComponent(overridesJs(p.overrides)));
     // Relative Pfade direkt absolut machen (der Preload-Scanner ignoriert <base> in srcdoc)
@@ -128,6 +134,33 @@
     p.uploads.forEach(function (u) { pend[u.path] = u.dataUrl; });
     Array.prototype.forEach.call(c.querySelectorAll("img[src]"), function (img) { var u = pend[img.getAttribute("src").replace(baseHref, "")]; if (u) img.setAttribute("src", u); });
     return "<!doctype html>\n" + c.documentElement.outerHTML;
+  }
+
+  /**
+   * Vorschau laden und onReady aufrufen, sobald das HTML da ist – nicht erst nach
+   * allen Bildern (onload), sonst ist auf dem Handy sekundenlang nichts antippbar.
+   */
+  var frameSeq = 0;
+  function loadFrame(frame, html, onReady) {
+    var seq = String(++frameSeq), done = false, tries = 0;
+    function ready() {
+      if (done || seq !== String(frameSeq)) return;
+      var d; try { d = frame.contentDocument; } catch (e) { d = null; }
+      if (!d || !d.documentElement || d.documentElement.getAttribute("data-mk-seq") !== seq || d.readyState === "loading") return;
+      done = true; onReady();
+    }
+    frame.onload = ready;
+    frame.srcdoc = html.replace(/<html\b/i, '<html data-mk-seq="' + seq + '"');
+    (function poll() { ready(); if (!done && seq === String(frameSeq) && ++tries < 400) setTimeout(poll, 50); })();
+  }
+
+  /** Scrollposition nach dem Neuladen wiederherstellen – auch wenn Bilder später die Höhe ändern. */
+  function restoreScroll(frame, y) {
+    var w = frame.contentWindow, d = frame.contentDocument, stop = false;
+    var go = function () { if (!stop) try { w.scrollTo(0, y); } catch (e) {} };
+    ["touchstart", "wheel", "keydown"].forEach(function (ev) { d.addEventListener(ev, function () { stop = true; }, { passive: true, capture: true }); });
+    go(); setTimeout(go, 60);
+    w.addEventListener("load", go);
   }
 
   function isTexty(el) {
@@ -287,7 +320,7 @@
     h: h, encPath: encPath, toEditable: toEditable, fromEditable: fromEditable, slugify: slugify,
     loadPage: loadPage, serialize: serialize, pageDirty: pageDirty, blockList: blockList, blockName: blockName,
     updateMkStyle: updateMkStyle, overridesJs: overridesJs, ensureOverridesTag: ensureOverridesTag,
-    previewHtml: previewHtml, isTexty: isTexty, pickTarget: pickTarget, moveNode: moveNode,
+    previewHtml: previewHtml, loadFrame: loadFrame, restoreScroll: restoreScroll, isTexty: isTexty, pickTarget: pickTarget, moveNode: moveNode,
     readImage: readImage, uploadName: uploadName
   };
 })();

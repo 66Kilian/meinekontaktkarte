@@ -47,7 +47,7 @@ export async function update(fn, message) {
 
 /** Öffentliche Sicht auf ein Konto (ohne Hash/Secret). */
 export function publicAccount(a) {
-  return { id: a.id, site: a.site, name: a.name, username: a.username, totp: Boolean(a.totp), createdAt: a.createdAt, lastLogin: a.lastLogin || null, disabled: Boolean(a.disabled) };
+  return { id: a.id, site: a.site, name: a.name, username: a.username, totp: Boolean(a.totp), createdAt: a.createdAt, lastLogin: a.lastLogin || null, disabled: Boolean(a.disabled), pwTemp: Boolean(a.pwTemp) };
 }
 
 export const USERNAME_RE = /^[a-z0-9][a-z0-9._@-]{2,59}$/;

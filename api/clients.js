@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         checkUser(username);
         const pwErr = checkPassword(b.password);
         if (pwErr) throw bad("A jelszó legalább 10 karakter legyen.");
-        data.accounts.push({ id: randomToken(9), site: site.id, name, username, pw: hashPassword(b.password), totp: null, ver: 1, createdAt: new Date().toISOString() });
+        data.accounts.push({ id: randomToken(9), site: site.id, name, username, pw: hashPassword(b.password), pwTemp: true, totp: null, ver: 1, createdAt: new Date().toISOString() });
       } else if (b.action === "update") {
         const name = String(b.name || "").trim().slice(0, 80), username = normUser(b.username);
         if (!name) throw bad("Add meg a nevet.");
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
         acc.name = name; acc.username = username;
       } else if (b.action === "setpw") {
         if (checkPassword(b.password)) throw bad("A jelszó legalább 10 karakter legyen.");
-        acc.pw = hashPassword(b.password); acc.ver = (acc.ver || 1) + 1;
+        acc.pw = hashPassword(b.password); acc.pwTemp = true; acc.ver = (acc.ver || 1) + 1;
       } else if (b.action === "invite" || b.action === "reset") {
         const token = randomToken(24);
         data.invites.push({
