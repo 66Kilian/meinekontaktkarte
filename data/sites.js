@@ -93,6 +93,24 @@ export default {
         "logo": "img/logo.png"
       },
       "impressum": {}
+    },
+    {
+      "id": "videorudi",
+      "name": "VideoRudi – Rudolf Kilian",
+      "group": "Fertige Seiten",
+      "folder": "Munkák/VideoRudi",
+      "slug": "videorudi",
+      "subdomain": "",
+      "enabled": true,
+      "aliases": [],
+      "notes": "NFC-Visitenkarte für Rudolf Kilian (VideoRudi). Kein Kunden-Admin. Studiofoto fehlt noch (img/studio.jpg). Venus-Berlin-Hinweis blendet sich ab 26.10.2026 selbst aus.",
+      "clientAdmin": false,
+      "repo": "",
+      "brand": {},
+      "impressum": {},
+      "features": {
+        "impressum": false
+      }
     }
   ]
 };
