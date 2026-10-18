@@ -103,7 +103,7 @@ export default {
       "subdomain": "",
       "enabled": true,
       "aliases": [],
-      "notes": "NFC-Visitenkarte für Rudolf Kilian (VideoRudi). Kein Kunden-Admin. Studiofoto fehlt noch (img/studio.jpg). Venus-Berlin-Hinweis blendet sich ab 26.10.2026 selbst aus.",
+      "notes": "NFC-Visitenkarte für Rudolf Kilian (VideoRudi). Kein Kunden-Admin.",
       "clientAdmin": false,
       "repo": "",
       "brand": {},

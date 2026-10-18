@@ -121,11 +121,6 @@
   .addr b{display:block;font:600 17px/1.25 var(--sans)}
   .addr small{display:block;margin-top:4px;color:var(--faint);font-size:13px}
   .addr .go{flex:none;font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-  /* Venus Berlin – nach der Messe einfach den ganzen Block löschen */
-  .fair{display:flex;gap:14px;align-items:flex-start;margin:22px 0 0;padding:16px 0 0}
-  .fair i{flex:none;width:9px;height:9px;margin-top:7px;transform:rotate(45deg);background:var(--crimson)}
-  .fair p{margin:0;font:italic 400 17px/1.35 var(--serif);color:var(--text)}
-  .fair small{display:block;margin-top:3px;font:500 12px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 
   /* ---------- Fuß ---------- */
   footer{padding:36px 0 calc(28px + env(safe-area-inset-bottom));margin-top:36px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
@@ -233,11 +228,6 @@
           <span><b>Johnstraße 83 / Top 1</b><small>1150 Wien</small></span>
           <span class="go" data-i18n="route">Route planen</span>
         </a>
-        <!-- Venus Berlin 2026: nach der Messe (ab 26.10.) diesen Block löschen -->
-        <div class="fair" data-fair>
-          <i aria-hidden="true"></i>
-          <p><span data-i18n="fair">Triff mich auf der Venus Berlin</span><small data-i18n="fairWhen">22.–25. Oktober · Messe Berlin</small></p>
-        </div>
       </div>
     </section>
   </main>
@@ -267,50 +257,43 @@
       save:"Kontakt speichern",call:"Anrufen",mail:"E-Mail schreiben",web1:"Filme & Events",web2:"Websites für Creator",
       studio:"Das Studio",day:"jeden Dienstag",hours:"Uhr, im Studio",
       invite:"Schau vorbei, lern das Studio kennen und stell Rudi deine Fragen persönlich. Diskret, entspannt, auf Augenhöhe.",
-      route:"Route planen",fair:"Triff mich auf der Venus Berlin",fairWhen:"22.–25. Oktober · Messe Berlin",
-      adult:"Nur für Erwachsene",alt:"Das Filmstudio von VideoRudi in Wien",lang:"Sprache"},
+      route:"Route planen",adult:"Nur für Erwachsene",alt:"Das Filmstudio von VideoRudi in Wien",lang:"Sprache"},
     en:{kicker:"Film producer · Vienna studio",
       bio:"For years, Rudi has been the man behind the camera at VideoRudi – in his own film studio in Vienna, with modern equipment and complete discretion. He produces authentic films and shoots for content creators who want professional footage. And with erotik-homepage.com, they get the website to match.",
       save:"Save contact",call:"Call",mail:"Send an email",web1:"Films & events",web2:"Websites for creators",
       studio:"The studio",day:"every Tuesday",hours:"at the studio",
       invite:"Drop by, see the studio and ask Rudi your questions in person. Discreet, relaxed, no pretence.",
-      route:"Get directions",fair:"Meet me at Venus Berlin",fairWhen:"22–25 October · Messe Berlin",
-      adult:"Adults only",alt:"The VideoRudi film studio in Vienna",lang:"Language"},
+      route:"Get directions",adult:"Adults only",alt:"The VideoRudi film studio in Vienna",lang:"Language"},
     pl:{kicker:"Producent filmowy · Studio w Wiedniu",
       bio:"Od wielu lat Rudi stoi za kamerą VideoRudi – we własnym studiu filmowym w Wiedniu, z nowoczesnym sprzętem i pełną dyskrecją. Produkuje autentyczne filmy i nagrywa dla twórców, którzy chcą profesjonalnego materiału. A dzięki erotik-homepage.com od razu dostają do tego własną stronę.",
       save:"Zapisz kontakt",call:"Zadzwoń",mail:"Napisz e-mail",web1:"Filmy i eventy",web2:"Strony dla twórców",
       studio:"Studio",day:"w każdy wtorek",hours:"w studiu",
       invite:"Wpadnij, zobacz studio i zapytaj Rudiego o wszystko osobiście. Dyskretnie, na luzie, jak równy z równym.",
-      route:"Wyznacz trasę",fair:"Spotkajmy się na Venus Berlin",fairWhen:"22–25 października · Messe Berlin",
-      adult:"Tylko dla dorosłych",alt:"Studio filmowe VideoRudi w Wiedniu",lang:"Język"},
+      route:"Wyznacz trasę",adult:"Tylko dla dorosłych",alt:"Studio filmowe VideoRudi w Wiedniu",lang:"Język"},
     cs:{kicker:"Filmový producent · Studio Vídeň",
       bio:"Už mnoho let stojí Rudi za kamerou VideoRudi – ve vlastním filmovém studiu ve Vídni, s moderní technikou a naprostou diskrétností. Natáčí autentické filmy a točí pro tvůrce obsahu, kteří chtějí profesionální materiál. A s erotik-homepage.com k tomu rovnou dostanou i vlastní web.",
       save:"Uložit kontakt",call:"Zavolat",mail:"Napsat e-mail",web1:"Filmy a akce",web2:"Weby pro tvůrce",
       studio:"Studio",day:"každé úterý",hours:"ve studiu",
       invite:"Zastav se, prohlédni si studio a zeptej se Rudiho na cokoli osobně. Diskrétně, v klidu, bez přetvářky.",
-      route:"Naplánovat trasu",fair:"Potkejme se na Venus Berlin",fairWhen:"22.–25. října · Messe Berlin",
-      adult:"Pouze pro dospělé",alt:"Filmové studio VideoRudi ve Vídni",lang:"Jazyk"},
+      route:"Naplánovat trasu",adult:"Pouze pro dospělé",alt:"Filmové studio VideoRudi ve Vídni",lang:"Jazyk"},
     tr:{kicker:"Film yapımcısı · Viyana stüdyosu",
       bio:"Rudi yıllardır VideoRudi'nin kamerasının arkasında – Viyana'daki kendi film stüdyosunda, modern ekipmanla ve tam bir gizlilikle. Özgün filmler üretiyor ve profesyonel çekim isteyen içerik üreticileri için çekim yapıyor. erotik-homepage.com ile de onlara yakışan web sitesini hazırlıyor.",
       save:"Kişiyi kaydet",call:"Ara",mail:"E-posta gönder",web1:"Filmler ve etkinlikler",web2:"İçerik üreticilerine web sitesi",
       studio:"Stüdyo",day:"her salı",hours:"stüdyoda",
       invite:"Uğra, stüdyoyu tanı ve sorularını Rudi'ye yüz yüze sor. Gizli, rahat ve samimi.",
-      route:"Yol tarifi al",fair:"Venus Berlin'de buluşalım",fairWhen:"22–25 Ekim · Messe Berlin",
-      adult:"Yalnızca yetişkinler için",alt:"VideoRudi'nin Viyana'daki film stüdyosu",lang:"Dil"},
+      route:"Yol tarifi al",adult:"Yalnızca yetişkinler için",alt:"VideoRudi'nin Viyana'daki film stüdyosu",lang:"Dil"},
     ru:{kicker:"Кинопродюсер · Студия в Вене",
       bio:"Уже много лет Руди стоит за камерой VideoRudi – в собственной киностудии в Вене, с современной техникой и полной конфиденциальностью. Он снимает аутентичные фильмы и работает с авторами контента, которым нужен профессиональный материал. А с erotik-homepage.com они сразу получают и собственный сайт.",
       save:"Сохранить контакт",call:"Позвонить",mail:"Написать письмо",web1:"Фильмы и мероприятия",web2:"Сайты для авторов",
       studio:"Студия",day:"каждый вторник",hours:"в студии",
       invite:"Заходи, посмотри студию и задай Руди свои вопросы лично. Деликатно, спокойно, на равных.",
-      route:"Проложить маршрут",fair:"Встретимся на Venus Berlin",fairWhen:"22–25 октября · Messe Berlin",
-      adult:"Только для взрослых",alt:"Киностудия VideoRudi в Вене",lang:"Язык"},
+      route:"Проложить маршрут",adult:"Только для взрослых",alt:"Киностудия VideoRudi в Вене",lang:"Язык"},
     hu:{kicker:"Filmproducer · Bécsi stúdió",
       bio:"Rudi évek óta a VideoRudi kamerája mögött áll – saját bécsi filmstúdiójában, modern technikával és teljes diszkrécióval. Hiteles filmeket készít, és azoknak a tartalomkészítőknek forgat, akik profi felvételeket szeretnének. Az erotik-homepage.com-mal pedig a hozzájuk illő weboldalt is megkapják.",
       save:"Névjegy mentése",call:"Hívás",mail:"E-mail írása",web1:"Filmek és események",web2:"Weboldalak alkotóknak",
       studio:"A stúdió",day:"minden kedden",hours:"a stúdióban",
       invite:"Ugorj be, nézd meg a stúdiót, és kérdezd Rudit személyesen. Diszkréten, lazán, egyenrangú félként.",
-      route:"Útvonaltervezés",fair:"Találkozzunk a Venus Berlinen",fairWhen:"október 22–25. · Messe Berlin",
-      adult:"Csak felnőtteknek",alt:"A VideoRudi filmstúdiója Bécsben",lang:"Nyelv"}
+      route:"Útvonaltervezés",adult:"Csak felnőtteknek",alt:"A VideoRudi filmstúdiója Bécsben",lang:"Nyelv"}
   };
   var btn = document.getElementById("langBtn"), list = document.getElementById("langList"), cur = "de";
   function setLang(l){
@@ -337,11 +320,6 @@
   setLang("de");
 
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  // ---------- Venus Berlin: nach der Messe automatisch ausblenden ----------
-  if (Date.now() > new Date("2026-10-26T00:00:00+02:00").getTime()) {
-    Array.prototype.forEach.call(document.querySelectorAll("[data-fair]"), function(el){ el.remove(); });
-  }
 
   // ---------- Karte „einschalten“ + laufender Timecode ----------
   requestAnimationFrame(function(){ document.getElementById("app").classList.add("ready"); });
