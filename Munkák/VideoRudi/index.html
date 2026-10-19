@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Rudolf Kilian · VideoRudi Wien</title>
-<meta name="description" content="Rudolf Kilian – Filmproduzent, VideoRudi Filmstudio Wien. Meet &amp; Greet jeden Dienstag 18–21 Uhr, Johnstraße 83, 1150 Wien.">
+<title>VideoRudi · Filmstudio Wien</title>
+<meta name="description" content="VideoRudi – Filmstudio Wien. Videodreh jeden Dienstag 14–17 Uhr, Meet &amp; Greet 18–21 Uhr, Johnstraße 83, 1150 Wien.">
 <meta name="rating" content="adult">
 <meta name="theme-color" content="#0c0809">
-<meta property="og:title" content="Rudolf Kilian · VideoRudi Wien">
+<meta property="og:title" content="VideoRudi · Filmstudio Wien">
 <meta property="og:description" content="Filmproduzent · Studio Wien. Meet &amp; Greet jeden Dienstag, 18–21 Uhr.">
 <meta property="og:type" content="profile">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0809'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='38' fill='%23c9a46a'%3ER%3C/text%3E%3C/svg%3E">
@@ -115,6 +115,8 @@
   .when{display:flex;align-items:baseline;gap:14px;margin:24px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .when .t{font:500 32px/1 var(--serif);font-variant-numeric:lining-nums tabular-nums;color:var(--gold-2)}
   .when .d{color:var(--dim);font-size:14px}
+  .when + .when{margin-top:0;border-top:0}
+  .when .d b{display:block;margin-bottom:2px;color:var(--text);font-weight:600;font-size:15px}
   .invite{margin:18px 0 0;color:var(--dim);font-size:15.5px}
   .addr{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:64px;margin:18px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:3px;transition:border-color .2s,background .2s}
   .addr:hover{border-color:var(--gold);background:rgba(201,164,106,.05)}
@@ -168,7 +170,7 @@
 
 <div class="wrap" id="app">
   <header class="top">
-    <span class="mark">VideoRudi<span>WIEN</span></span>
+    <span class="mark">VR<span>WIEN</span></span>
     <div class="lang">
       <button class="lang-btn" id="langBtn" type="button" aria-expanded="false" aria-controls="langList">
         <span class="sr-label" id="langCode">DE</span>
@@ -186,13 +188,13 @@
         <span class="sweep" aria-hidden="true"></span>
         <div class="rec" aria-hidden="true"><span class="dot"><i></i>Rec</span><span class="tc" id="tc">00:00:00:00</span></div>
         <p class="kicker" data-i18n="kicker">Filmproduzent · Studio Wien</p>
-        <h1 class="name" id="name"><span class="first">Rudolf</span><span class="last">Kilian</span></h1>
+        <h1 class="name" id="name"><span class="first">Video</span><span class="last">Rudi</span></h1>
         <span class="rule" aria-hidden="true"></span>
         <p class="bio" data-i18n="bio">Seit vielen Jahren steht Rudi hinter der Kamera von VideoRudi – im eigenen Filmstudio in Wien, mit moderner Technik und absoluter Diskretion. Er produziert authentische Filme und dreht für Content Creator, die professionelles Material wollen. Mit erotik-homepage.com bekommen sie gleich die passende Website dazu.</p>
       </div>
 
       <div class="cta">
-        <a class="save in" style="--i:0" href="rudolf-kilian.vcf" download="Rudolf-Kilian.vcf">
+        <a class="save in" style="--i:0" href="videorudi.vcf" download="VideoRudi.vcf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="8" r="3.6"/><path d="M3.5 19.5c.9-3.3 3.4-5 6.5-5 1.4 0 2.6.3 3.6 1M18 13.5v6M15 16.5h6"/></svg>
           <span data-i18n="save">Kontakt speichern</span>
         </a>
@@ -223,6 +225,7 @@
       <div class="mg reveal">
         <h2 id="mgTitle">Meet &amp; Greet<em data-i18n="day">jeden Dienstag</em></h2>
         <div class="when"><span class="t">18:00 – 21:00</span><span class="d" data-i18n="hours">Uhr, im Studio</span></div>
+        <div class="when shoot"><span class="t">14:00 – 17:00</span><span class="d"><b data-i18n="shoot">Videodreh</b><span data-i18n="day">jeden Dienstag</span></span></div>
         <p class="invite" data-i18n="invite">Schau vorbei, lern das Studio kennen und stell Rudi deine Fragen persönlich. Diskret, entspannt, auf Augenhöhe.</p>
         <a class="addr" href="https://www.google.com/maps/search/?api=1&amp;query=Johnstra%C3%9Fe+83%2C+1150+Wien" target="_blank" rel="noopener">
           <span><b>Johnstraße 83 / Top 1</b><small>1150 Wien</small></span>
@@ -252,43 +255,43 @@
   // ---------- Sprachen (startet IMMER auf Deutsch) ----------
   var LANGS = [["de","Deutsch"],["en","English"],["pl","Polski"],["cs","Čeština"],["tr","Türkçe"],["ru","Русский"],["hu","Magyar"]];
   var T = {
-    de:{kicker:"Filmproduzent · Studio Wien",
+    de:{shoot:"Videodreh",kicker:"Filmproduzent · Studio Wien",
       bio:"Seit vielen Jahren steht Rudi hinter der Kamera von VideoRudi – im eigenen Filmstudio in Wien, mit moderner Technik und absoluter Diskretion. Er produziert authentische Filme und dreht für Content Creator, die professionelles Material wollen. Mit erotik-homepage.com bekommen sie gleich die passende Website dazu.",
       save:"Kontakt speichern",call:"Anrufen",mail:"E-Mail schreiben",web1:"Filme & Events",web2:"Websites für Creator",
       studio:"Das Studio",day:"jeden Dienstag",hours:"Uhr, im Studio",
       invite:"Schau vorbei, lern das Studio kennen und stell Rudi deine Fragen persönlich. Diskret, entspannt, auf Augenhöhe.",
       route:"Route planen",adult:"Nur für Erwachsene",alt:"Das Filmstudio von VideoRudi in Wien",lang:"Sprache"},
-    en:{kicker:"Film producer · Vienna studio",
+    en:{shoot:"Video shoot",kicker:"Film producer · Vienna studio",
       bio:"For years, Rudi has been the man behind the camera at VideoRudi – in his own film studio in Vienna, with modern equipment and complete discretion. He produces authentic films and shoots for content creators who want professional footage. And with erotik-homepage.com, they get the website to match.",
       save:"Save contact",call:"Call",mail:"Send an email",web1:"Films & events",web2:"Websites for creators",
       studio:"The studio",day:"every Tuesday",hours:"at the studio",
       invite:"Drop by, see the studio and ask Rudi your questions in person. Discreet, relaxed, no pretence.",
       route:"Get directions",adult:"Adults only",alt:"The VideoRudi film studio in Vienna",lang:"Language"},
-    pl:{kicker:"Producent filmowy · Studio w Wiedniu",
+    pl:{shoot:"Nagrania wideo",kicker:"Producent filmowy · Studio w Wiedniu",
       bio:"Od wielu lat Rudi stoi za kamerą VideoRudi – we własnym studiu filmowym w Wiedniu, z nowoczesnym sprzętem i pełną dyskrecją. Produkuje autentyczne filmy i nagrywa dla twórców, którzy chcą profesjonalnego materiału. A dzięki erotik-homepage.com od razu dostają do tego własną stronę.",
       save:"Zapisz kontakt",call:"Zadzwoń",mail:"Napisz e-mail",web1:"Filmy i eventy",web2:"Strony dla twórców",
       studio:"Studio",day:"w każdy wtorek",hours:"w studiu",
       invite:"Wpadnij, zobacz studio i zapytaj Rudiego o wszystko osobiście. Dyskretnie, na luzie, jak równy z równym.",
       route:"Wyznacz trasę",adult:"Tylko dla dorosłych",alt:"Studio filmowe VideoRudi w Wiedniu",lang:"Język"},
-    cs:{kicker:"Filmový producent · Studio Vídeň",
+    cs:{shoot:"Natáčení videa",kicker:"Filmový producent · Studio Vídeň",
       bio:"Už mnoho let stojí Rudi za kamerou VideoRudi – ve vlastním filmovém studiu ve Vídni, s moderní technikou a naprostou diskrétností. Natáčí autentické filmy a točí pro tvůrce obsahu, kteří chtějí profesionální materiál. A s erotik-homepage.com k tomu rovnou dostanou i vlastní web.",
       save:"Uložit kontakt",call:"Zavolat",mail:"Napsat e-mail",web1:"Filmy a akce",web2:"Weby pro tvůrce",
       studio:"Studio",day:"každé úterý",hours:"ve studiu",
       invite:"Zastav se, prohlédni si studio a zeptej se Rudiho na cokoli osobně. Diskrétně, v klidu, bez přetvářky.",
       route:"Naplánovat trasu",adult:"Pouze pro dospělé",alt:"Filmové studio VideoRudi ve Vídni",lang:"Jazyk"},
-    tr:{kicker:"Film yapımcısı · Viyana stüdyosu",
+    tr:{shoot:"Video çekimi",kicker:"Film yapımcısı · Viyana stüdyosu",
       bio:"Rudi yıllardır VideoRudi'nin kamerasının arkasında – Viyana'daki kendi film stüdyosunda, modern ekipmanla ve tam bir gizlilikle. Özgün filmler üretiyor ve profesyonel çekim isteyen içerik üreticileri için çekim yapıyor. erotik-homepage.com ile de onlara yakışan web sitesini hazırlıyor.",
       save:"Kişiyi kaydet",call:"Ara",mail:"E-posta gönder",web1:"Filmler ve etkinlikler",web2:"İçerik üreticilerine web sitesi",
       studio:"Stüdyo",day:"her salı",hours:"stüdyoda",
       invite:"Uğra, stüdyoyu tanı ve sorularını Rudi'ye yüz yüze sor. Gizli, rahat ve samimi.",
       route:"Yol tarifi al",adult:"Yalnızca yetişkinler için",alt:"VideoRudi'nin Viyana'daki film stüdyosu",lang:"Dil"},
-    ru:{kicker:"Кинопродюсер · Студия в Вене",
+    ru:{shoot:"Видеосъёмка",kicker:"Кинопродюсер · Студия в Вене",
       bio:"Уже много лет Руди стоит за камерой VideoRudi – в собственной киностудии в Вене, с современной техникой и полной конфиденциальностью. Он снимает аутентичные фильмы и работает с авторами контента, которым нужен профессиональный материал. А с erotik-homepage.com они сразу получают и собственный сайт.",
       save:"Сохранить контакт",call:"Позвонить",mail:"Написать письмо",web1:"Фильмы и мероприятия",web2:"Сайты для авторов",
       studio:"Студия",day:"каждый вторник",hours:"в студии",
       invite:"Заходи, посмотри студию и задай Руди свои вопросы лично. Деликатно, спокойно, на равных.",
       route:"Проложить маршрут",adult:"Только для взрослых",alt:"Киностудия VideoRudi в Вене",lang:"Язык"},
-    hu:{kicker:"Filmproducer · Bécsi stúdió",
+    hu:{shoot:"Videóforgatás",kicker:"Filmproducer · Bécsi stúdió",
       bio:"Rudi évek óta a VideoRudi kamerája mögött áll – saját bécsi filmstúdiójában, modern technikával és teljes diszkrécióval. Hiteles filmeket készít, és azoknak a tartalomkészítőknek forgat, akik profi felvételeket szeretnének. Az erotik-homepage.com-mal pedig a hozzájuk illő weboldalt is megkapják.",
       save:"Névjegy mentése",call:"Hívás",mail:"E-mail írása",web1:"Filmek és események",web2:"Weboldalak alkotóknak",
       studio:"A stúdió",day:"minden kedden",hours:"a stúdióban",
